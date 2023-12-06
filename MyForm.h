@@ -40,23 +40,11 @@ namespace ProjectPOO {
 			}
 		}
 	private: System::Windows::Forms::Panel^ pnlBouton;
-
 	private: System::Windows::Forms::Button^ btnPersonnel;
-	protected:
-
-	protected:
-
-
 	private: System::Windows::Forms::Panel^ pnlNom;
-
-
-
-
 	private: System::Windows::Forms::Panel^ pnlData;
 	private: System::Windows::Forms::Button^ btnStock;
-
 	private: System::Windows::Forms::Button^ btnCommande;
-
 	private: System::Windows::Forms::Button^ btnClient;
 	private: System::Windows::Forms::Button^ btnStatistique;
 	private: System::Windows::Forms::Panel^ pnlLogo;
@@ -71,6 +59,7 @@ namespace ProjectPOO {
 		/// </summary>
 		System::ComponentModel::Container^ components;
 		System::Windows::Forms::Form^ formulaireActuel;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
