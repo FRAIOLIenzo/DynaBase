@@ -66,7 +66,8 @@ namespace ProjectPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(663, 701);
+			this->BackColor = System::Drawing::Color::White;
+			this->ClientSize = System::Drawing::Size(752, 701);
 			this->Controls->Add(this->label1);
 			this->Name = L"MyFormCommande";
 			this->Text = L"MyFormCommande";

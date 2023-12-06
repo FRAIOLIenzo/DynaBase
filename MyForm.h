@@ -69,7 +69,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 		System::Windows::Forms::Form^ formulaireActuel;
 
 #pragma region Windows Form Designer generated code
@@ -236,7 +236,7 @@ namespace ProjectPOO {
 			this->pictureBox1->Location = System::Drawing::Point(-1, 0);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(285, 132);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
@@ -284,7 +284,7 @@ namespace ProjectPOO {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MinimumSize = System::Drawing::Size(1870, 1300);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"DynaBase";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->pnlBouton->ResumeLayout(false);
 			this->pnlLogo->ResumeLayout(false);
@@ -308,113 +308,113 @@ namespace ProjectPOO {
 		}
 
 #pragma endregion
-private: System::Void btnPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
-		static_cast<System::Int32>(static_cast<System::Byte>(52)));
-	this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
-		static_cast<System::Int32>(static_cast<System::Byte>(52)));
-	this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->lbTop->Text = L"Personnel";
-	OuvrirFormulaire(gcnew MyFormPersonnel());
-}
+	private: System::Void btnPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
+			static_cast<System::Int32>(static_cast<System::Byte>(52)));
+		this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
+			static_cast<System::Int32>(static_cast<System::Byte>(52)));
+		this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->lbTop->Text = L"Personnel";
+		OuvrirFormulaire(gcnew MyFormPersonnel());
+	}
 
-private: System::Void btnClient_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
-		static_cast<System::Int32>(static_cast<System::Byte>(66)));
-	this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
-		static_cast<System::Int32>(static_cast<System::Byte>(66)));
-	this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->lbTop->Text = L"Client";
-	OuvrirFormulaire(gcnew MyFormClient());
-}
-private: System::Void btnCommande_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(130)),
-		static_cast<System::Int32>(static_cast<System::Byte>(117)));
-	this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(130)),
-		static_cast<System::Int32>(static_cast<System::Byte>(117)));
-	this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->lbTop->Text = L"Commande";
-	OuvrirFormulaire(gcnew MyFormCommande());
-}
-private: System::Void btnStock_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(167)), static_cast<System::Int32>(static_cast<System::Byte>(199)),
-		static_cast<System::Int32>(static_cast<System::Byte>(186)));
-	this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(167)), static_cast<System::Int32>(static_cast<System::Byte>(199)),
-		static_cast<System::Int32>(static_cast<System::Byte>(186)));
-	this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->lbTop->Text = L"Stock";
-	OuvrirFormulaire(gcnew MyFormStock());
-}
-private: System::Void btnStatistique_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(161)), static_cast<System::Int32>(static_cast<System::Byte>(183)),
-		static_cast<System::Int32>(static_cast<System::Byte>(203)));
-	this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(161)), static_cast<System::Int32>(static_cast<System::Byte>(183)),
-		static_cast<System::Int32>(static_cast<System::Byte>(203)));
-	this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->lbTop->Text = L"Statistique";
-	OuvrirFormulaire(gcnew MyFormStatistique());
-}
+	private: System::Void btnClient_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
+			static_cast<System::Int32>(static_cast<System::Byte>(66)));
+		this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(37)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
+			static_cast<System::Int32>(static_cast<System::Byte>(66)));
+		this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->lbTop->Text = L"Client";
+		OuvrirFormulaire(gcnew MyFormClient());
+	}
+	private: System::Void btnCommande_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(130)),
+			static_cast<System::Int32>(static_cast<System::Byte>(117)));
+		this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(130)),
+			static_cast<System::Int32>(static_cast<System::Byte>(117)));
+		this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->lbTop->Text = L"Commande";
+		OuvrirFormulaire(gcnew MyFormCommande());
+	}
+	private: System::Void btnStock_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(167)), static_cast<System::Int32>(static_cast<System::Byte>(199)),
+			static_cast<System::Int32>(static_cast<System::Byte>(186)));
+		this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(167)), static_cast<System::Int32>(static_cast<System::Byte>(199)),
+			static_cast<System::Int32>(static_cast<System::Byte>(186)));
+		this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->lbTop->Text = L"Stock";
+		OuvrirFormulaire(gcnew MyFormStock());
+	}
+	private: System::Void btnStatistique_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(161)), static_cast<System::Int32>(static_cast<System::Byte>(183)),
+			static_cast<System::Int32>(static_cast<System::Byte>(203)));
+		this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(161)), static_cast<System::Int32>(static_cast<System::Byte>(183)),
+			static_cast<System::Int32>(static_cast<System::Byte>(203)));
+		this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->lbTop->Text = L"Statistique";
+		OuvrirFormulaire(gcnew MyFormStatistique());
+	}
 
-	   private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-		   this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
-			   static_cast<System::Int32>(static_cast<System::Byte>(58)));
-		   this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
-		   this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
-		   this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
-		   this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
-		   this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
-		   this->lbTop->Text = L"Accueil";
-		   OuvrirFormulaire(gcnew MyFormAccueil());
-	   }
+	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+			static_cast<System::Int32>(static_cast<System::Byte>(58)));
+		this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		this->lbTop->Text = L"Accueil";
+		OuvrirFormulaire(gcnew MyFormAccueil());
+	}
 
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->lbTop->Text = L"Accueil";
-	int x = (Screen::PrimaryScreen->Bounds.Width - this->Width) / 2;
-	int y = (Screen::PrimaryScreen->Bounds.Height - this->Height) / 2;
-	this->Location = System::Drawing::Point(x, y);
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->lbTop->Text = L"Accueil";
+		int x = (Screen::PrimaryScreen->Bounds.Width - this->Width) / 2;
+		int y = (Screen::PrimaryScreen->Bounds.Height - this->Height) / 2;
+		this->Location = System::Drawing::Point(x, y);
 
-}
+	}
 
 
-};
+	};
 }
