@@ -1,6 +1,10 @@
 #pragma once
 #include "MyFormPersonnel.h"
 #include "MyFormClient.h"
+#include "MyFormCommande.h"
+#include "MyFormStock.h"
+#include "MyFormStatistique.h"
+#include "MyFormAccueil.h"
 namespace ProjectPOO {
 
 	using namespace System;
@@ -351,6 +355,7 @@ private: System::Void btnCommande_Click(System::Object^ sender, System::EventArg
 	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 		static_cast<System::Int32>(static_cast<System::Byte>(76)));
 	this->lbTop->Text = L"Commande";
+	OuvrirFormulaire(gcnew MyFormCommande());
 }
 private: System::Void btnStock_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(167)), static_cast<System::Int32>(static_cast<System::Byte>(199)),
@@ -366,6 +371,7 @@ private: System::Void btnStock_Click(System::Object^ sender, System::EventArgs^ 
 	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 		static_cast<System::Int32>(static_cast<System::Byte>(76)));
 	this->lbTop->Text = L"Stock";
+	OuvrirFormulaire(gcnew MyFormStock());
 }
 private: System::Void btnStatistique_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(161)), static_cast<System::Int32>(static_cast<System::Byte>(183)),
@@ -381,6 +387,7 @@ private: System::Void btnStatistique_Click(System::Object^ sender, System::Event
 	this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 		static_cast<System::Int32>(static_cast<System::Byte>(76)));
 	this->lbTop->Text = L"Statistique";
+	OuvrirFormulaire(gcnew MyFormStatistique());
 }
 
 	   private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -397,6 +404,7 @@ private: System::Void btnStatistique_Click(System::Object^ sender, System::Event
 		   this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
 		   this->lbTop->Text = L"Accueil";
+		   OuvrirFormulaire(gcnew MyFormAccueil());
 	   }
 
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {

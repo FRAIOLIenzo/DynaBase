@@ -64,9 +64,9 @@ namespace ProjectPOO {
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(155, 98);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(70, 25);
+			this->label1->Size = System::Drawing::Size(109, 25);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"label1";
+			this->label1->Text = L"Personnel";
 			// 
 			// label2
 			// 

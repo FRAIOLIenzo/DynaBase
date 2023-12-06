@@ -10,12 +10,12 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de MyFormClient
+	/// Description résumée de MyFormStatistique
 	/// </summary>
-	public ref class MyFormClient : public System::Windows::Forms::Form
+	public ref class MyFormStatistique : public System::Windows::Forms::Form
 	{
 	public:
-		MyFormClient(void)
+		MyFormStatistique(void)
 		{
 			InitializeComponent();
 			//
@@ -27,14 +27,13 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~MyFormClient()
+		~MyFormStatistique()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 
@@ -51,40 +50,26 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(499, 201);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 82;
-			this->dataGridView1->RowTemplate->Height = 33;
-			this->dataGridView1->Size = System::Drawing::Size(675, 819);
-			this->dataGridView1->TabIndex = 0;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(169, 409);
+			this->label1->Location = System::Drawing::Point(377, 516);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(67, 25);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"Client";
+			this->label1->Size = System::Drawing::Size(113, 25);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Statistique";
 			// 
-			// MyFormClient
+			// MyFormStatistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1233, 1083);
+			this->ClientSize = System::Drawing::Size(841, 914);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->dataGridView1);
-			this->Name = L"MyFormClient";
-			this->Text = L"MyFormClient";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->Name = L"MyFormStatistique";
+			this->Text = L"MyFormStatistique";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

@@ -123,17 +123,33 @@
   <ItemGroup>
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyFormAccueil.cpp" />
     <ClCompile Include="MyFormClient.cpp" />
+    <ClCompile Include="MyFormCommande.cpp" />
     <ClCompile Include="MyFormPersonnel.cpp" />
+    <ClCompile Include="MyFormStatistique.cpp" />
+    <ClCompile Include="MyFormStock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyFormAccueil.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyFormClient.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyFormCommande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyFormPersonnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormStatistique.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormStock.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -141,11 +157,23 @@
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyFormAccueil.resx">
+      <DependentUpon>MyFormAccueil.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyFormClient.resx">
       <DependentUpon>MyFormClient.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCommande.resx">
+      <DependentUpon>MyFormCommande.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyFormPersonnel.resx">
       <DependentUpon>MyFormPersonnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormStatistique.resx">
+      <DependentUpon>MyFormStatistique.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormStock.resx">
+      <DependentUpon>MyFormStock.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

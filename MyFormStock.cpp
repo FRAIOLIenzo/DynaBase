@@ -1,0 +1,2 @@
+#include "MyFormStock.h"
+
