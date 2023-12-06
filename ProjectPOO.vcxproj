@@ -129,6 +129,9 @@
     <ClCompile Include="MyFormPersonnel.cpp" />
     <ClCompile Include="MyFormStatistique.cpp" />
     <ClCompile Include="MyFormStock.cpp" />
+    <ClCompile Include="PersonnelCreer.cpp" />
+    <ClCompile Include="PersonnelModifier.cpp" />
+    <ClCompile Include="PersonnelSupprimer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -150,6 +153,15 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyFormStock.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PersonnelCreer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PersonnelModifier.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PersonnelSupprimer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>

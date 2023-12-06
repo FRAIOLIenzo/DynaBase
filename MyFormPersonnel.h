@@ -34,11 +34,21 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+
 	protected:
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
+
+
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Button^ btnCreer;
+	private: System::Windows::Forms::Button^ btnSupprimer;
+	private: System::Windows::Forms::Button^ btnModifier;
+
+
+	private: System::Windows::Forms::Button^ btnAfficher;
+	private: System::Windows::Forms::Panel^ pnlMode;
+
+
 
 	private:
 		/// <summary>
@@ -53,60 +63,135 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormPersonnel::typeid));
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->btnCreer = (gcnew System::Windows::Forms::Button());
+			this->btnSupprimer = (gcnew System::Windows::Forms::Button());
+			this->btnModifier = (gcnew System::Windows::Forms::Button());
+			this->btnAfficher = (gcnew System::Windows::Forms::Button());
+			this->pnlMode = (gcnew System::Windows::Forms::Panel());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// label1
+			// dataGridView1
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(155, 98);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(109, 25);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Personnel";
+			this->dataGridView1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(686, 12);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 82;
+			this->dataGridView1->RowTemplate->Height = 33;
+			this->dataGridView1->Size = System::Drawing::Size(750, 321);
+			this->dataGridView1->TabIndex = 4;
 			// 
-			// label2
+			// btnCreer
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(160, 186);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(70, 25);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"label2";
+			this->btnCreer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->btnCreer->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				static_cast<System::Int32>(static_cast<System::Byte>(52)));
+			this->btnCreer->FlatAppearance->BorderSize = 0;
+			this->btnCreer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnCreer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnCreer->ForeColor = System::Drawing::Color::White;
+			this->btnCreer->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCreer.Image")));
+			this->btnCreer->Location = System::Drawing::Point(686, 530);
+			this->btnCreer->Name = L"btnCreer";
+			this->btnCreer->Size = System::Drawing::Size(223, 116);
+			this->btnCreer->TabIndex = 5;
+			this->btnCreer->Text = L"Créer";
+			this->btnCreer->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
+			this->btnCreer->UseVisualStyleBackColor = false;
 			// 
-			// textBox1
+			// btnSupprimer
 			// 
-			this->textBox1->Location = System::Drawing::Point(339, 91);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 31);
-			this->textBox1->TabIndex = 2;
+			this->btnSupprimer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->btnSupprimer->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				static_cast<System::Int32>(static_cast<System::Byte>(52)));
+			this->btnSupprimer->FlatAppearance->BorderSize = 0;
+			this->btnSupprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSupprimer->ForeColor = System::Drawing::Color::White;
+			this->btnSupprimer->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSupprimer.Image")));
+			this->btnSupprimer->Location = System::Drawing::Point(950, 530);
+			this->btnSupprimer->Name = L"btnSupprimer";
+			this->btnSupprimer->Size = System::Drawing::Size(223, 116);
+			this->btnSupprimer->TabIndex = 6;
+			this->btnSupprimer->Text = L"Supprimer";
+			this->btnSupprimer->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
+			this->btnSupprimer->UseVisualStyleBackColor = false;
 			// 
-			// textBox2
+			// btnModifier
 			// 
-			this->textBox2->Location = System::Drawing::Point(339, 180);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 31);
-			this->textBox2->TabIndex = 3;
+			this->btnModifier->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->btnModifier->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				static_cast<System::Int32>(static_cast<System::Byte>(52)));
+			this->btnModifier->FlatAppearance->BorderSize = 0;
+			this->btnModifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnModifier->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnModifier->ForeColor = System::Drawing::Color::White;
+			this->btnModifier->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnModifier.Image")));
+			this->btnModifier->Location = System::Drawing::Point(1213, 530);
+			this->btnModifier->Name = L"btnModifier";
+			this->btnModifier->Size = System::Drawing::Size(223, 116);
+			this->btnModifier->TabIndex = 7;
+			this->btnModifier->Text = L"Modifier";
+			this->btnModifier->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
+			this->btnModifier->UseVisualStyleBackColor = false;
+			// 
+			// btnAfficher
+			// 
+			this->btnAfficher->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->btnAfficher->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
+				static_cast<System::Int32>(static_cast<System::Byte>(52)));
+			this->btnAfficher->FlatAppearance->BorderSize = 0;
+			this->btnAfficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAfficher->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnAfficher->ForeColor = System::Drawing::Color::White;
+			this->btnAfficher->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAfficher.Image")));
+			this->btnAfficher->Location = System::Drawing::Point(686, 372);
+			this->btnAfficher->Name = L"btnAfficher";
+			this->btnAfficher->Size = System::Drawing::Size(750, 116);
+			this->btnAfficher->TabIndex = 8;
+			this->btnAfficher->Text = L"Afficher";
+			this->btnAfficher->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
+			this->btnAfficher->UseVisualStyleBackColor = false;
+			// 
+			// pnlMode
+			// 
+			this->pnlMode->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left));
+			this->pnlMode->Location = System::Drawing::Point(12, 12);
+			this->pnlMode->Name = L"pnlMode";
+			this->pnlMode->Size = System::Drawing::Size(647, 634);
+			this->pnlMode->TabIndex = 9;
 			// 
 			// MyFormPersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(1101, 744);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->ClientSize = System::Drawing::Size(1448, 658);
+			this->Controls->Add(this->btnAfficher);
+			this->Controls->Add(this->btnModifier);
+			this->Controls->Add(this->btnSupprimer);
+			this->Controls->Add(this->btnCreer);
+			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->pnlMode);
 			this->Name = L"MyFormPersonnel";
 			this->Text = L"MyFormPersonnel";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+
+};
 }
