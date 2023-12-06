@@ -187,6 +187,15 @@
     <EmbeddedResource Include="MyFormStock.resx">
       <DependentUpon>MyFormStock.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PersonnelCreer.resx">
+      <DependentUpon>PersonnelCreer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonnelModifier.resx">
+      <DependentUpon>PersonnelModifier.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonnelSupprimer.resx">
+      <DependentUpon>PersonnelSupprimer.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

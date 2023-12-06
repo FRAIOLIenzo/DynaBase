@@ -1,3 +1,7 @@
+#include "PersonnelCreer.h"
+#include "PersonnelSupprimer.h"
+#include "PersonnelModifier.h"
+
 #pragma once
 
 namespace ProjectPOO {
@@ -55,6 +59,7 @@ namespace ProjectPOO {
 		/// Variable nécessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+		System::Windows::Forms::Form^ formulaireActuel;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -104,6 +109,7 @@ namespace ProjectPOO {
 			this->btnCreer->Text = L"Créer";
 			this->btnCreer->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
 			this->btnCreer->UseVisualStyleBackColor = false;
+			this->btnCreer->Click += gcnew System::EventHandler(this, &MyFormPersonnel::btnCreer_Click);
 			// 
 			// btnSupprimer
 			// 
@@ -124,6 +130,7 @@ namespace ProjectPOO {
 			this->btnSupprimer->Text = L"Supprimer";
 			this->btnSupprimer->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
 			this->btnSupprimer->UseVisualStyleBackColor = false;
+			this->btnSupprimer->Click += gcnew System::EventHandler(this, &MyFormPersonnel::btnSupprimer_Click);
 			// 
 			// btnModifier
 			// 
@@ -143,6 +150,7 @@ namespace ProjectPOO {
 			this->btnModifier->Text = L"Modifier";
 			this->btnModifier->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
 			this->btnModifier->UseVisualStyleBackColor = false;
+			this->btnModifier->Click += gcnew System::EventHandler(this, &MyFormPersonnel::btnModifier_Click);
 			// 
 			// btnAfficher
 			// 
@@ -179,6 +187,7 @@ namespace ProjectPOO {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1448, 658);
+			this->ControlBox = false;
 			this->Controls->Add(this->btnAfficher);
 			this->Controls->Add(this->btnModifier);
 			this->Controls->Add(this->btnSupprimer);
@@ -187,11 +196,35 @@ namespace ProjectPOO {
 			this->Controls->Add(this->pnlMode);
 			this->Name = L"MyFormPersonnel";
 			this->Text = L"MyFormPersonnel";
+			this->Load += gcnew System::EventHandler(this, &MyFormPersonnel::MyFormPersonnel_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-
+		void OuvrirFormulaire(System::Windows::Forms::Form^ formulaire) {
+			if (formulaireActuel != nullptr) {
+				formulaireActuel->Close();
+			}
+			formulaire->TopLevel = false;
+			formulaire->Parent = pnlMode;
+			pnlMode->Controls->Add(formulaire);
+			formulaire->Dock = System::Windows::Forms::DockStyle::Fill;
+			formulaire->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			formulaire->Show();
+			formulaireActuel = formulaire;
+		}
+private: System::Void btnCreer_Click(System::Object^ sender, System::EventArgs^ e) {
+	OuvrirFormulaire(gcnew PersonnelCreer());
+}
+private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+	OuvrirFormulaire(gcnew PersonnelSupprimer());
+}
+private: System::Void btnModifier_Click(System::Object^ sender, System::EventArgs^ e) {
+	OuvrirFormulaire(gcnew PersonnelModifier());
+}
+private: System::Void MyFormPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
+	OuvrirFormulaire(gcnew PersonnelCreer());
+}
 };
 }

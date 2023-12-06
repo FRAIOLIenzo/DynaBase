@@ -34,12 +34,50 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Label^ lbID;
+	protected:
+
+	private: System::Windows::Forms::TextBox^ txtNom;
+	private: System::Windows::Forms::Label^ lbSupprimer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::Button^ btnOK;
+	private: System::Windows::Forms::Button^ btnAnnuler;
+
+
+
+
+
+	protected:
+
+	protected:
+
+	protected:
+
 
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -48,12 +86,104 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"PersonnelSupprimer";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->lbID = (gcnew System::Windows::Forms::Label());
+			this->txtNom = (gcnew System::Windows::Forms::TextBox());
+			this->lbSupprimer = (gcnew System::Windows::Forms::Label());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->btnOK = (gcnew System::Windows::Forms::Button());
+			this->btnAnnuler = (gcnew System::Windows::Forms::Button());
+			this->tableLayoutPanel1->SuspendLayout();
+			this->SuspendLayout();
+			// 
+			// lbID
+			// 
+			this->lbID->AutoSize = true;
+			this->lbID->Dock = System::Windows::Forms::DockStyle::Top;
+			this->lbID->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbID->Location = System::Drawing::Point(0, 49);
+			this->lbID->Name = L"lbID";
+			this->lbID->Size = System::Drawing::Size(36, 29);
+			this->lbID->TabIndex = 0;
+			this->lbID->Text = L"ID";
+			// 
+			// txtNom
+			// 
+			this->txtNom->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->txtNom->Dock = System::Windows::Forms::DockStyle::Top;
+			this->txtNom->Location = System::Drawing::Point(0, 78);
+			this->txtNom->Name = L"txtNom";
+			this->txtNom->Size = System::Drawing::Size(621, 31);
+			this->txtNom->TabIndex = 1;
+			// 
+			// lbSupprimer
+			// 
+			this->lbSupprimer->Dock = System::Windows::Forms::DockStyle::Top;
+			this->lbSupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbSupprimer->Location = System::Drawing::Point(0, 0);
+			this->lbSupprimer->Name = L"lbSupprimer";
+			this->lbSupprimer->Size = System::Drawing::Size(621, 49);
+			this->lbSupprimer->TabIndex = 12;
+			this->lbSupprimer->Text = L"Supprimer";
+			this->lbSupprimer->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->ColumnCount = 2;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel1->Controls->Add(this->btnOK, 0, 0);
+			this->tableLayoutPanel1->Controls->Add(this->btnAnnuler, 1, 0);
+			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 463);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 1;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(621, 100);
+			this->tableLayoutPanel1->TabIndex = 13;
+			// 
+			// btnOK
+			// 
+			this->btnOK->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->btnOK->Location = System::Drawing::Point(3, 3);
+			this->btnOK->Name = L"btnOK";
+			this->btnOK->Size = System::Drawing::Size(304, 94);
+			this->btnOK->TabIndex = 0;
+			this->btnOK->Text = L"OK";
+			this->btnOK->UseVisualStyleBackColor = true;
+			// 
+			// btnAnnuler
+			// 
+			this->btnAnnuler->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->btnAnnuler->Location = System::Drawing::Point(313, 3);
+			this->btnAnnuler->Name = L"btnAnnuler";
+			this->btnAnnuler->Size = System::Drawing::Size(305, 94);
+			this->btnAnnuler->TabIndex = 1;
+			this->btnAnnuler->Text = L"Annuler";
+			this->btnAnnuler->UseVisualStyleBackColor = true;
+			// 
+			// PersonnelSupprimer
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
+			this->ClientSize = System::Drawing::Size(621, 563);
+			this->ControlBox = false;
+			this->Controls->Add(this->tableLayoutPanel1);
+			this->Controls->Add(this->txtNom);
+			this->Controls->Add(this->lbID);
+			this->Controls->Add(this->lbSupprimer);
+			this->Name = L"PersonnelSupprimer";
+			this->Text = L"PersonnelCreer";
+			this->tableLayoutPanel1->ResumeLayout(false);
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
 		}
 #pragma endregion
+
 	};
 }
