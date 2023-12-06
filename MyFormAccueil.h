@@ -69,6 +69,7 @@ namespace ProjectPOO {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
+
 			// 
 			// MyFormAccueil
 			// 
@@ -84,5 +85,6 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
+
 	};
 }

@@ -232,10 +232,11 @@ namespace ProjectPOO {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(-1, 0);
+			this->pictureBox1->Location = System::Drawing::Point(12, 0);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(285, 132);
+			this->pictureBox1->Size = System::Drawing::Size(273, 132);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
@@ -412,7 +413,7 @@ namespace ProjectPOO {
 		int x = (Screen::PrimaryScreen->Bounds.Width - this->Width) / 2;
 		int y = (Screen::PrimaryScreen->Bounds.Height - this->Height) / 2;
 		this->Location = System::Drawing::Point(x, y);
-
+		OuvrirFormulaire(gcnew MyFormAccueil());
 	}
 
 
