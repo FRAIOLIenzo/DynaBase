@@ -34,6 +34,8 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,11 +50,31 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"MyFormClient";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->SuspendLayout();
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(499, 201);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 82;
+			this->dataGridView1->RowTemplate->Height = 33;
+			this->dataGridView1->Size = System::Drawing::Size(675, 819);
+			this->dataGridView1->TabIndex = 0;
+			// 
+			// MyFormClient
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(1233, 1083);
+			this->Controls->Add(this->dataGridView1);
+			this->Name = L"MyFormClient";
+			this->Text = L"MyFormClient";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};

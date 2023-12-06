@@ -1,5 +1,6 @@
 #pragma once
 #include "MyFormPersonnel.h"
+#include "MyFormClient.h"
 namespace ProjectPOO {
 
 	using namespace System;
@@ -65,6 +66,7 @@ namespace ProjectPOO {
 		/// Variable nécessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+		System::Windows::Forms::Form^ formulaireActuel;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -289,12 +291,16 @@ namespace ProjectPOO {
 		}
 
 		void OuvrirFormulaire(System::Windows::Forms::Form^ formulaire) {
+			if (formulaireActuel != nullptr) {
+				formulaireActuel->Close();
+			}
 			formulaire->TopLevel = false;
 			formulaire->Parent = pnlData;
 			pnlData->Controls->Add(formulaire);
 			formulaire->Dock = System::Windows::Forms::DockStyle::Fill;
 			formulaire->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			formulaire->Show();
+			formulaireActuel = formulaire;
 		}
 
 #pragma endregion
@@ -329,6 +335,7 @@ private: System::Void btnClient_Click(System::Object^ sender, System::EventArgs^
 	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 		static_cast<System::Int32>(static_cast<System::Byte>(76)));
 	this->lbTop->Text = L"Client";
+	OuvrirFormulaire(gcnew MyFormClient());
 }
 private: System::Void btnCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(130)),
@@ -375,6 +382,23 @@ private: System::Void btnStatistique_Click(System::Object^ sender, System::Event
 		static_cast<System::Int32>(static_cast<System::Byte>(76)));
 	this->lbTop->Text = L"Statistique";
 }
+
+	   private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+		   this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
+			   static_cast<System::Int32>(static_cast<System::Byte>(58)));
+		   this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		   this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		   this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		   this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		   this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+			   static_cast<System::Int32>(static_cast<System::Byte>(76)));
+		   this->lbTop->Text = L"Accueil";
+	   }
+
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->lbTop->Text = L"Accueil";
 	int x = (Screen::PrimaryScreen->Bounds.Width - this->Width) / 2;
@@ -382,20 +406,7 @@ private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
 	this->Location = System::Drawing::Point(x, y);
 
 }
-private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->pnlNom->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(39)),
-		static_cast<System::Int32>(static_cast<System::Byte>(58)));
-	this->btnPersonnel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnClient->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnCommande->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStock->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->btnStatistique->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-		static_cast<System::Int32>(static_cast<System::Byte>(76)));
-	this->lbTop->Text = L"Accueil";
-}
+
+
 };
 }
