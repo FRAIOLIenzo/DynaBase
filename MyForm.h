@@ -401,7 +401,7 @@ namespace ProjectPOO {
 
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->lbTop->Text = L"Accueil";
-		this->Size = System::Drawing::Size(875, 466);
+		this->Size = System::Drawing::Size(1000, 550);
 		int x = (Screen::PrimaryScreen->Bounds.Width - this->Width) / 2;
 		int y = (Screen::PrimaryScreen->Bounds.Height - this->Height) / 2;
 		this->Location = System::Drawing::Point(x, y);
