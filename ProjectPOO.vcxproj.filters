@@ -48,13 +48,13 @@
     <ClCompile Include="PersonnelModifier.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLservicePersonnel.cpp">
+    <ClCompile Include="CLservice.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="CLcad.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="CLmapPersonnel.cpp">
+    <ClCompile Include="CLmapTB.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,13 +89,13 @@
     <ClInclude Include="PersonnelModifier.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CLservicePersonnel.h">
+    <ClInclude Include="CLservice.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="CLcad.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CLmapPersonnel.h">
+    <ClInclude Include="CLmapTB.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

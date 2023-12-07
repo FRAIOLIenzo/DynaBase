@@ -1,5 +1,5 @@
 #pragma once
-#include "CLmapPersonnel.h"
+#include "CLmapTB.h"
 #include "CLcad.h"
 
 namespace NS_Comp_Svc
@@ -8,10 +8,10 @@ namespace NS_Comp_Svc
 	{
 	private:
 		NS_Comp_Data::CLcad^ oCad;
-		NS_Comp_Mappage::CLmapPersonnel^ oMappPersonnel;
+		NS_Comp_Mappage::CLmapTB^ oMappTB;
 	public:
 		CLservices(void);
-		System::Data::DataSet^ SelectionnerPersonnel(System::String^);
+		System::Data::DataSet^ selectionnerToutesLesPersonnes(System::String^);
 		//void AjouterPersonnel(System::String^, System::String^);
 		//void ModifierPersonnel(int, System::String^, System::String^);
 		//void SupprimerPersonnel(int);	

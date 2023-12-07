@@ -1,7 +1,7 @@
 #include "PersonnelCreer.h"
 #include "PersonnelSupprimer.h"
 #include "PersonnelModifier.h"
-#include "CLservicePersonnel.h"
+#include "CLservice.h"
 
 #pragma once
 
@@ -221,10 +221,11 @@ private: System::Void btnModifier_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void MyFormPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
 	OuvrirFormulaire(gcnew PersonnelCreer());
+	this->oSvc = gcnew NS_Comp_Svc::CLservices();
 }
 private: System::Void btnAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dgvPersonnel->Refresh();
-	this->oDs = this->oSvc->SelectionnerPersonnel("Rsl");
+	this->oDs = this->oSvc->selectionnerToutesLesPersonnes("Rsl");
 	this->dgvPersonnel->DataSource = this->oDs;
 	this->dgvPersonnel->DataMember = "Rsl";
 }

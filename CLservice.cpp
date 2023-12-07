@@ -1,14 +1,14 @@
-#include "CLservicePersonnel.h"
+#include "CLservice.h"
 
 NS_Comp_Svc::CLservices::CLservices(void)
 {
 	this->oCad = gcnew NS_Comp_Data::CLcad();
-	this->oMappPersonnel = gcnew NS_Comp_Mappage::CLmapPersonnel();
+	this->oMappTB = gcnew NS_Comp_Mappage::CLmapTB();
 }
-System::Data::DataSet^ NS_Comp_Svc::CLservices::SelectionnerPersonnel(System::String^ dataTableName)
+System::Data::DataSet^ NS_Comp_Svc::CLservices::selectionnerToutesLesPersonnes(System::String^ dataTableName)
 {
 	System::String^ sql;
-	sql = this->oMappPersonnel->SelectPersonnel();
+	sql = this->oMappTB->Select();
 	return this->oCad->getRows(sql, dataTableName);
 }
 

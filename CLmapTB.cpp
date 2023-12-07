@@ -1,6 +1,6 @@
-#include "CLmapPersonnel.h"
+#include "CLmapTB.h"
 
-System::String^ NS_Comp_Mappage::CLmapPersonnel::SelectPersonnel(void)
+System::String^ NS_Comp_Mappage::CLmapTB::Select(void)
 {
 	return "SELECT * FROM [BDD_Projet_POO].[dbo].[Personnel]";
 }

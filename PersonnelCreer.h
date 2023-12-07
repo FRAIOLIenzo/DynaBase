@@ -300,6 +300,7 @@ namespace ProjectPOO {
 			this->Controls->Add(this->lbCreer);
 			this->Name = L"PersonnelCreer";
 			this->Text = L"PersonnelCreer";
+			this->Load += gcnew System::EventHandler(this, &PersonnelCreer::PersonnelCreer_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -307,5 +308,7 @@ namespace ProjectPOO {
 		}
 #pragma endregion
 
+private: System::Void PersonnelCreer_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
