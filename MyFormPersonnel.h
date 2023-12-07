@@ -225,7 +225,7 @@ private: System::Void MyFormPersonnel_Load(System::Object^ sender, System::Event
 }
 private: System::Void btnAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dgvPersonnel->Refresh();
-	this->oDs = this->oSvc->selectionnerToutesLesPersonnes("Rsl");
+	this->oDs = this->oSvc->SelectionnerPersonnel("Rsl");
 	this->dgvPersonnel->DataSource = this->oDs;
 	this->dgvPersonnel->DataMember = "Rsl";
 }

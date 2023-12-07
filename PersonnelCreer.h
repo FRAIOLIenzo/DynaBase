@@ -1,3 +1,4 @@
+#include "CLservice.h"
 #pragma once
 
 namespace ProjectPOO {
@@ -37,37 +38,23 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Label^ lbNom;
 	private: System::Windows::Forms::TextBox^ txtNom;
 	private: System::Windows::Forms::TextBox^ txtPrenom;
-
 	private: System::Windows::Forms::Label^ lbPrenom;
 	private: System::Windows::Forms::TextBox^ txtDateEmbauche;
 	private: System::Windows::Forms::Label^ lbDateEmbauche;
-
-
-
 	private: System::Windows::Forms::TextBox^ txtAdresse;
 	private: System::Windows::Forms::Label^ lbAdresse;
-
-
 	private: System::Windows::Forms::TextBox^ txtNumAdresse;
 	private: System::Windows::Forms::Label^ lbNumAdresse;
-
-
 	private: System::Windows::Forms::TextBox^ txtCodePostal;
 	private: System::Windows::Forms::Label^ lbCodePostal;
 	private: System::Windows::Forms::Label^ lbCreer;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ btnOK;
 	private: System::Windows::Forms::Button^ btnAnnuler;
+	private: NS_Comp_Svc::CLservices^ oSvc;
+	private: System::Windows::Forms::TextBox^ txtRoleID;
 
-
-
-
-
-	protected:
-
-	protected:
-
-	protected:
+	private: System::Windows::Forms::Label^ lbRoleID;
 
 
 	private:
@@ -99,6 +86,8 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->btnOK = (gcnew System::Windows::Forms::Button());
 			this->btnAnnuler = (gcnew System::Windows::Forms::Button());
+			this->txtRoleID = (gcnew System::Windows::Forms::TextBox());
+			this->lbRoleID = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -120,7 +109,7 @@ namespace ProjectPOO {
 			this->txtNom->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtNom->Location = System::Drawing::Point(0, 78);
 			this->txtNom->Name = L"txtNom";
-			this->txtNom->Size = System::Drawing::Size(621, 31);
+			this->txtNom->Size = System::Drawing::Size(669, 31);
 			this->txtNom->TabIndex = 1;
 			// 
 			// txtPrenom
@@ -129,7 +118,7 @@ namespace ProjectPOO {
 			this->txtPrenom->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtPrenom->Location = System::Drawing::Point(0, 138);
 			this->txtPrenom->Name = L"txtPrenom";
-			this->txtPrenom->Size = System::Drawing::Size(621, 31);
+			this->txtPrenom->Size = System::Drawing::Size(669, 31);
 			this->txtPrenom->TabIndex = 3;
 			// 
 			// lbPrenom
@@ -150,7 +139,7 @@ namespace ProjectPOO {
 			this->txtDateEmbauche->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtDateEmbauche->Location = System::Drawing::Point(0, 198);
 			this->txtDateEmbauche->Name = L"txtDateEmbauche";
-			this->txtDateEmbauche->Size = System::Drawing::Size(621, 31);
+			this->txtDateEmbauche->Size = System::Drawing::Size(669, 31);
 			this->txtDateEmbauche->TabIndex = 5;
 			// 
 			// lbDateEmbauche
@@ -171,7 +160,7 @@ namespace ProjectPOO {
 			this->txtAdresse->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtAdresse->Location = System::Drawing::Point(0, 258);
 			this->txtAdresse->Name = L"txtAdresse";
-			this->txtAdresse->Size = System::Drawing::Size(621, 31);
+			this->txtAdresse->Size = System::Drawing::Size(669, 31);
 			this->txtAdresse->TabIndex = 7;
 			// 
 			// lbAdresse
@@ -192,7 +181,7 @@ namespace ProjectPOO {
 			this->txtNumAdresse->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtNumAdresse->Location = System::Drawing::Point(0, 318);
 			this->txtNumAdresse->Name = L"txtNumAdresse";
-			this->txtNumAdresse->Size = System::Drawing::Size(621, 31);
+			this->txtNumAdresse->Size = System::Drawing::Size(669, 31);
 			this->txtNumAdresse->TabIndex = 9;
 			// 
 			// lbNumAdresse
@@ -213,7 +202,7 @@ namespace ProjectPOO {
 			this->txtCodePostal->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtCodePostal->Location = System::Drawing::Point(0, 378);
 			this->txtCodePostal->Name = L"txtCodePostal";
-			this->txtCodePostal->Size = System::Drawing::Size(621, 31);
+			this->txtCodePostal->Size = System::Drawing::Size(669, 31);
 			this->txtCodePostal->TabIndex = 11;
 			// 
 			// lbCodePostal
@@ -235,7 +224,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->lbCreer->Location = System::Drawing::Point(0, 0);
 			this->lbCreer->Name = L"lbCreer";
-			this->lbCreer->Size = System::Drawing::Size(621, 49);
+			this->lbCreer->Size = System::Drawing::Size(669, 49);
 			this->lbCreer->TabIndex = 12;
 			this->lbCreer->Text = L"Créer";
 			this->lbCreer->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -250,11 +239,11 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->Controls->Add(this->btnOK, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->btnAnnuler, 1, 0);
 			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 463);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 580);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(621, 100);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(669, 100);
 			this->tableLayoutPanel1->TabIndex = 13;
 			// 
 			// btnOK
@@ -262,28 +251,53 @@ namespace ProjectPOO {
 			this->btnOK->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnOK->Location = System::Drawing::Point(3, 3);
 			this->btnOK->Name = L"btnOK";
-			this->btnOK->Size = System::Drawing::Size(304, 94);
+			this->btnOK->Size = System::Drawing::Size(328, 94);
 			this->btnOK->TabIndex = 0;
 			this->btnOK->Text = L"OK";
 			this->btnOK->UseVisualStyleBackColor = true;
+			this->btnOK->Click += gcnew System::EventHandler(this, &PersonnelCreer::btnOK_Click);
 			// 
 			// btnAnnuler
 			// 
 			this->btnAnnuler->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->btnAnnuler->Location = System::Drawing::Point(313, 3);
+			this->btnAnnuler->Location = System::Drawing::Point(337, 3);
 			this->btnAnnuler->Name = L"btnAnnuler";
-			this->btnAnnuler->Size = System::Drawing::Size(305, 94);
+			this->btnAnnuler->Size = System::Drawing::Size(329, 94);
 			this->btnAnnuler->TabIndex = 1;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = true;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &PersonnelCreer::btnAnnuler_Click);
+			// 
+			// txtRoleID
+			// 
+			this->txtRoleID->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->txtRoleID->Dock = System::Windows::Forms::DockStyle::Top;
+			this->txtRoleID->Location = System::Drawing::Point(0, 438);
+			this->txtRoleID->Name = L"txtRoleID";
+			this->txtRoleID->Size = System::Drawing::Size(669, 31);
+			this->txtRoleID->TabIndex = 13;
+			// 
+			// lbRoleID
+			// 
+			this->lbRoleID->AutoSize = true;
+			this->lbRoleID->Dock = System::Windows::Forms::DockStyle::Top;
+			this->lbRoleID->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbRoleID->Location = System::Drawing::Point(0, 409);
+			this->lbRoleID->Name = L"lbRoleID";
+			this->lbRoleID->Size = System::Drawing::Size(93, 29);
+			this->lbRoleID->TabIndex = 12;
+			this->lbRoleID->Text = L"Role ID";
 			// 
 			// PersonnelCreer
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(621, 563);
+			this->ClientSize = System::Drawing::Size(669, 680);
 			this->ControlBox = false;
+			this->Controls->Add(this->txtRoleID);
+			this->Controls->Add(this->lbRoleID);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->txtCodePostal);
 			this->Controls->Add(this->lbCodePostal);
@@ -308,7 +322,23 @@ namespace ProjectPOO {
 		}
 #pragma endregion
 
+private: System::Void btnOK_Click(System::Object^ sender, System::EventArgs^ e) {
+	int NumAdresse = System::Convert::ToInt32(this->txtNumAdresse->Text);
+	int CodePostal = System::Convert::ToInt32(this->txtCodePostal->Text);
+	int RoleID = System::Convert::ToInt32(this->txtRoleID->Text);
+	this->oSvc->AjouterPersonnel(this->txtNom->Text, this->txtPrenom->Text, this->txtDateEmbauche->Text, this->txtAdresse->Text, NumAdresse, CodePostal, RoleID);
+}
+private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->txtNom->Text = L"";
+	this->txtPrenom->Text = L"";
+	this->txtDateEmbauche->Text = L"";
+	this->txtAdresse->Text = L"";
+	this->txtNumAdresse->Text = L"";
+	this->txtCodePostal->Text = L"";
+	this->txtRoleID->Text = L"";
+}
 private: System::Void PersonnelCreer_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc = gcnew NS_Comp_Svc::CLservices();
 }
 };
 }

@@ -8,15 +8,25 @@ namespace NS_Comp_Mappage
 		int Id;
 		System::String^ nom;
 		System::String^ prenom;
+		System::String^ embauche;
+		System::String^ adresse;
+		int numadresse;
+		int codepostal;
+		int roleID;
 
 	public:
-		System::String^ Select(void);
-		//System::String^ Insert(void);
+		System::String^ SelectPersonnel(void);
+		System::String^ InsertPersonnel(void);
 		//System::String^ Delete(int);
 		//System::String^ Update(int, System::String^, System::String^);
 
-		//void setNom(System::String^);
-		//void setPrenom(System::String^);
+		void setNom(System::String^);
+		void setPrenom(System::String^);
+		void setEmbauche(System::String^);
+		void setAdresse(System::String^);
+		void setNumAdresse(int);
+		void setCodePostal(int);
+		void setRoleID(int);
 
 		//int getId(void);
 		//System::String^ getNom(void);

@@ -154,6 +154,7 @@ namespace ProjectPOO {
 			this->btnOK->TabIndex = 0;
 			this->btnOK->Text = L"OK";
 			this->btnOK->UseVisualStyleBackColor = true;
+			this->btnOK->Click += gcnew System::EventHandler(this, &PersonnelSupprimer::btnOK_Click);
 			// 
 			// btnAnnuler
 			// 
@@ -164,6 +165,7 @@ namespace ProjectPOO {
 			this->btnAnnuler->TabIndex = 1;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = true;
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &PersonnelSupprimer::btnAnnuler_Click);
 			// 
 			// PersonnelSupprimer
 			// 
@@ -185,5 +187,9 @@ namespace ProjectPOO {
 		}
 #pragma endregion
 
-	};
+	private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void btnOK_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

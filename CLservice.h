@@ -11,8 +11,8 @@ namespace NS_Comp_Svc
 		NS_Comp_Mappage::CLmapTB^ oMappTB;
 	public:
 		CLservices(void);
-		System::Data::DataSet^ selectionnerToutesLesPersonnes(System::String^);
-		//void AjouterPersonnel(System::String^, System::String^);
+		System::Data::DataSet^ SelectionnerPersonnel(System::String^);
+		void AjouterPersonnel(System::String^, System::String^, System::String^, System::String^, int, int, int);
 		//void ModifierPersonnel(int, System::String^, System::String^);
 		//void SupprimerPersonnel(int);	
 	};
