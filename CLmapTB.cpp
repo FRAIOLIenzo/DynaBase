@@ -9,10 +9,10 @@ System::String^ NS_Comp_Mappage::CLmapTB::InsertPersonnel(void)
 {
 	return "INSERT INTO Personnel VALUES('" + this->nom + "','" + this->prenom + "','" + this->embauche + "','" + this->adresse + "','" + this->numadresse + "','" + this->codepostal + "','" + this->roleID + "');";
 }
-//System::String^ NS_Comp_Mappage::CLmapPersonnel::Delete(int clientID)
-//{
-//	return "DELETE FROM [prosit6].[dbo].[Clients] WHERE [id_clients] = " + clientID + ";";
-//}
+System::String^ NS_Comp_Mappage::CLmapTB::DeletePersonnel(int clientID)
+{
+	return "DELETE FROM [BDD_Projet_POO].[dbo].[Personnel] WHERE [Personnel_Id] = " + clientID + ";";
+}
 //System::String^ NS_Comp_Mappage::CLmapPersonnel::Update(int clientID, System::String^ nouveauNom, System::String^ nouveauPrenom)
 //{
 //	return "UPDATE [prosit6].[dbo].[Clients] SET [nom] = '" + nouveauNom + "', [prenom] = '" + nouveauPrenom + "' WHERE [id_clients] = '" + clientID + "';";

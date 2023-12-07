@@ -1,3 +1,4 @@
+#include "CLservice.h"
 #pragma once
 
 namespace ProjectPOO {
@@ -35,44 +36,12 @@ namespace ProjectPOO {
 			}
 		}
 	private: System::Windows::Forms::Label^ lbID;
-	protected:
-
-	private: System::Windows::Forms::TextBox^ txtNom;
+	private: System::Windows::Forms::TextBox^ txtID;
 	private: System::Windows::Forms::Label^ lbSupprimer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ btnOK;
 	private: System::Windows::Forms::Button^ btnAnnuler;
-
-
-
-
-
-	protected:
-
-	protected:
-
-	protected:
-
-
+	private: NS_Comp_Svc::CLservices^ oSvc;
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -87,7 +56,7 @@ namespace ProjectPOO {
 		void InitializeComponent(void)
 		{
 			this->lbID = (gcnew System::Windows::Forms::Label());
-			this->txtNom = (gcnew System::Windows::Forms::TextBox());
+			this->txtID = (gcnew System::Windows::Forms::TextBox());
 			this->lbSupprimer = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->btnOK = (gcnew System::Windows::Forms::Button());
@@ -107,14 +76,14 @@ namespace ProjectPOO {
 			this->lbID->TabIndex = 0;
 			this->lbID->Text = L"ID";
 			// 
-			// txtNom
+			// txtID
 			// 
-			this->txtNom->BackColor = System::Drawing::SystemColors::MenuBar;
-			this->txtNom->Dock = System::Windows::Forms::DockStyle::Top;
-			this->txtNom->Location = System::Drawing::Point(0, 78);
-			this->txtNom->Name = L"txtNom";
-			this->txtNom->Size = System::Drawing::Size(621, 31);
-			this->txtNom->TabIndex = 1;
+			this->txtID->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->txtID->Dock = System::Windows::Forms::DockStyle::Top;
+			this->txtID->Location = System::Drawing::Point(0, 78);
+			this->txtID->Name = L"txtID";
+			this->txtID->Size = System::Drawing::Size(621, 31);
+			this->txtID->TabIndex = 1;
 			// 
 			// lbSupprimer
 			// 
@@ -175,11 +144,12 @@ namespace ProjectPOO {
 			this->ClientSize = System::Drawing::Size(621, 563);
 			this->ControlBox = false;
 			this->Controls->Add(this->tableLayoutPanel1);
-			this->Controls->Add(this->txtNom);
+			this->Controls->Add(this->txtID);
 			this->Controls->Add(this->lbID);
 			this->Controls->Add(this->lbSupprimer);
 			this->Name = L"PersonnelSupprimer";
 			this->Text = L"PersonnelCreer";
+			this->Load += gcnew System::EventHandler(this, &PersonnelSupprimer::PersonnelSupprimer_Load_1);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -188,8 +158,14 @@ namespace ProjectPOO {
 #pragma endregion
 
 	private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->txtID->Text = L"";
 	}
 	private: System::Void btnOK_Click(System::Object^ sender, System::EventArgs^ e) {
+		int ID = System::Convert::ToInt32(this->txtID->Text);
+		this->oSvc->SupprimerPersonnel(ID);
 	}
+private: System::Void PersonnelSupprimer_Load_1(System::Object^ sender, System::EventArgs^ e) {
+	this->oSvc = gcnew NS_Comp_Svc::CLservices();
+}
 };
 }

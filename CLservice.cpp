@@ -26,6 +26,13 @@ void NS_Comp_Svc::CLservices::AjouterPersonnel(System::String^ nom, System::Stri
 
 	this->oCad->actionRows(sql);
 }
+
+void NS_Comp_Svc::CLservices::SupprimerPersonnel(int clientID)
+{
+	System::String^ sqlDelete;
+	sqlDelete = this->oMappTB->DeletePersonnel(clientID);
+	this->oCad->actionRows(sqlDelete);
+};
 //
 //void NS_Comp_Svc::CLservices::modifierAdresseClient(int clientID, System::String^ nouveauNom, System::String^ nouveauPrenom)
 //{
@@ -35,10 +42,3 @@ void NS_Comp_Svc::CLservices::AjouterPersonnel(System::String^ nom, System::Stri
 //	this->oCad->actionRows(sqlUpdate);
 //};
 //
-//void NS_Comp_Svc::CLservices::supprimerClient(int clientID)
-//{
-//	System::String^ sqlDelete;
-//
-//	sqlDelete = this->oMappPersonnel->Delete(clientID);
-//	this->oCad->actionRows(sqlDelete);
-//};

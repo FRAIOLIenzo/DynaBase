@@ -17,7 +17,7 @@ namespace NS_Comp_Mappage
 	public:
 		System::String^ SelectPersonnel(void);
 		System::String^ InsertPersonnel(void);
-		//System::String^ Delete(int);
+		System::String^ DeletePersonnel(int);
 		//System::String^ Update(int, System::String^, System::String^);
 
 		void setNom(System::String^);
