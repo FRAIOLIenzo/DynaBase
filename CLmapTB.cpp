@@ -13,11 +13,11 @@ System::String^ NS_Comp_Mappage::CLmapTB::DeletePersonnel(int clientID)
 {
 	return "DELETE FROM [BDD_Projet_POO].[dbo].[Personnel] WHERE [Personnel_Id] = " + clientID + ";";
 }
-//System::String^ NS_Comp_Mappage::CLmapPersonnel::Update(int clientID, System::String^ nouveauNom, System::String^ nouveauPrenom)
-//{
-//	return "UPDATE [prosit6].[dbo].[Clients] SET [nom] = '" + nouveauNom + "', [prenom] = '" + nouveauPrenom + "' WHERE [id_clients] = '" + clientID + "';";
-//}
-//
+System::String^ NS_Comp_Mappage::CLmapTB::UpdatePersonnel(int ID, System::String^ nom, System::String^ prenom, System::String^ dateembauche, System::String^ adresse, int numadresse, int codepostal, int roleID)
+{
+	return "UPDATE [BDD_Projet_POO].[dbo].[Personnel] SET [Personnel_Nom] = '" + nom + "', [Personnel_Prenom] = '" + prenom + "', [Personnel_Embauche] = '" + dateembauche + "', [Personnel_Adresse] = '" + adresse + "', [Personnel_Num_Adresse] = '" + numadresse + "', [Personnel_Code_Postal] = '" + codepostal + "', [Roles_Id] = '" + roleID + "' WHERE [Personnel_Id] = '" + ID + "';";
+}
+
 void NS_Comp_Mappage::CLmapTB::setNom(System::String^ nom)
 {
 	this->nom = nom;

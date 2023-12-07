@@ -33,12 +33,12 @@ void NS_Comp_Svc::CLservices::SupprimerPersonnel(int clientID)
 	sqlDelete = this->oMappTB->DeletePersonnel(clientID);
 	this->oCad->actionRows(sqlDelete);
 };
-//
-//void NS_Comp_Svc::CLservices::modifierAdresseClient(int clientID, System::String^ nouveauNom, System::String^ nouveauPrenom)
-//{
-//	System::String^ sqlUpdate;
-//
-//	sqlUpdate = this->oMappPersonnel->Update(clientID, nouveauNom, nouveauPrenom);
-//	this->oCad->actionRows(sqlUpdate);
-//};
-//
+
+void NS_Comp_Svc::CLservices::ModifierPersonnel(int ID, System::String^ nom, System::String^ prenom, System::String^ dateembauche, System::String^ adresse, int numadresse, int codepostal, int roleID)
+{
+	System::String^ sqlUpdate;
+
+	sqlUpdate = this->oMappTB->UpdatePersonnel(ID, nom, prenom, dateembauche, adresse, numadresse, codepostal, roleID);
+	this->oCad->actionRows(sqlUpdate);
+};
+
