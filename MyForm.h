@@ -275,6 +275,7 @@ namespace ProjectPOO {
 			this->Controls->Add(this->pnlNom);
 			this->Controls->Add(this->pnlBouton);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MinimumSize = System::Drawing::Size(1785, 932);
 			this->Name = L"MyForm";
 			this->Text = L"DynaBase";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);

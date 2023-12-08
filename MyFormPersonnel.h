@@ -1,7 +1,7 @@
-#include "PersonnelCreer.h"
-#include "PersonnelSupprimer.h"
-#include "PersonnelModifier.h"
-#include "CLservice.h"
+#include "MyFormPersonnelCreer.h"
+#include "MyFormPersonnelSupprimer.h"
+#include "MyFormPersonnelModifier.h"
+#include "CLservicePersonnel.h"
 
 #pragma once
 
@@ -40,7 +40,7 @@ namespace ProjectPOO {
 			}
 		}
 	private: System::Windows::Forms::DataGridView^ dgvPersonnel;
-	private: NS_Comp_Svc::CLservices^ oSvc;
+	private: NS_Comp_Svc::CLservicesPersonnel^ oSvc;
 	private: System::Data::DataSet^ oDs;
 	private: System::Windows::Forms::Button^ btnCreer;
 	private: System::Windows::Forms::Button^ btnSupprimer;
@@ -221,7 +221,7 @@ private: System::Void btnModifier_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void MyFormPersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
 	OuvrirFormulaire(gcnew PersonnelCreer());
-	this->oSvc = gcnew NS_Comp_Svc::CLservices();
+	this->oSvc = gcnew NS_Comp_Svc::CLservicesPersonnel();
 }
 private: System::Void btnAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dgvPersonnel->Refresh();

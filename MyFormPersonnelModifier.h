@@ -1,4 +1,4 @@
-#include "CLservice.h"
+#include "CLservicePersonnel.h"
 #pragma once
 
 namespace ProjectPOO {
@@ -55,7 +55,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Label^ lbCodePostal;
 	private: System::Windows::Forms::TextBox^ txtRoleID;
 	private: System::Windows::Forms::Label^ lbRoleID;
-	private: NS_Comp_Svc::CLservices^ oSvc;
+	private: NS_Comp_Svc::CLservicesPersonnel^ oSvc;
 
 	private:
 		/// <summary>
@@ -367,7 +367,7 @@ namespace ProjectPOO {
 	}
 
 private: System::Void PersonnelModifier_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc = gcnew NS_Comp_Svc::CLservices();
+	this->oSvc = gcnew NS_Comp_Svc::CLservicesPersonnel();
 }
 
 };

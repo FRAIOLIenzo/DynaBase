@@ -1,7 +1,7 @@
 #pragma once
 namespace NS_Comp_Mappage
 {
-	ref class CLmapTB
+	ref class CLmapPersonnel
 	{
 	private:
 		System::String^ sSql;

@@ -1,4 +1,4 @@
-#include "CLservice.h"
+#include "CLservicePersonnel.h"
 #pragma once
 
 namespace ProjectPOO {
@@ -41,7 +41,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ btnOK;
 	private: System::Windows::Forms::Button^ btnAnnuler;
-	private: NS_Comp_Svc::CLservices^ oSvc;
+	private: NS_Comp_Svc::CLservicesPersonnel^ oSvc;
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -165,7 +165,7 @@ namespace ProjectPOO {
 		this->oSvc->SupprimerPersonnel(ID);
 	}
 private: System::Void PersonnelSupprimer_Load_1(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc = gcnew NS_Comp_Svc::CLservices();
+	this->oSvc = gcnew NS_Comp_Svc::CLservicesPersonnel();
 }
 };
 }

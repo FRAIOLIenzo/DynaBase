@@ -1,4 +1,4 @@
-#include "CLservice.h"
+#include "CLservicePersonnel.h"
 #pragma once
 
 namespace ProjectPOO {
@@ -51,10 +51,12 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ btnOK;
 	private: System::Windows::Forms::Button^ btnAnnuler;
-	private: NS_Comp_Svc::CLservices^ oSvc;
+	private: NS_Comp_Svc::CLservicesPersonnel^ oSvc;
 	private: System::Windows::Forms::TextBox^ txtRoleID;
 
 	private: System::Windows::Forms::Label^ lbRoleID;
+
+
 
 
 	private:
@@ -338,7 +340,7 @@ private: System::Void btnAnnuler_Click(System::Object^ sender, System::EventArgs
 	this->txtRoleID->Text = L"";
 }
 private: System::Void PersonnelCreer_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc = gcnew NS_Comp_Svc::CLservices();
+	this->oSvc = gcnew NS_Comp_Svc::CLservicesPersonnel();
 }
 };
 }

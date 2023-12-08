@@ -1,6 +1,4 @@
-#include "PersonnelCreer.h"
-#include "PersonnelSupprimer.h"
-#include "PersonnelModifier.h"
+
 
 #pragma once
 
@@ -215,16 +213,16 @@ namespace ProjectPOO {
 			formulaireActuel = formulaire;
 		}
 	private: System::Void btnCreer_Click(System::Object^ sender, System::EventArgs^ e) {
-		OuvrirFormulaire(gcnew PersonnelCreer());
+		//OuvrirFormulaire(gcnew PersonnelCreer());
 	}
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-		OuvrirFormulaire(gcnew PersonnelSupprimer());
+
 	}
 	private: System::Void btnModifier_Click(System::Object^ sender, System::EventArgs^ e) {
-		OuvrirFormulaire(gcnew PersonnelModifier());
+
 	}
 	private: System::Void MyFormStock_Load(System::Object^ sender, System::EventArgs^ e) {
-		OuvrirFormulaire(gcnew PersonnelCreer());
+
 	}
 };
 }

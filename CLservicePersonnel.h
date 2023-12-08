@@ -1,16 +1,16 @@
 #pragma once
-#include "CLmapTB.h"
+#include "CLmapPersonnel.h"
 #include "CLcad.h"
 
 namespace NS_Comp_Svc
 {
-	ref class CLservices
+	ref class CLservicesPersonnel
 	{
 	private:
 		NS_Comp_Data::CLcad^ oCad;
-		NS_Comp_Mappage::CLmapTB^ oMappTB;
+		NS_Comp_Mappage::CLmapPersonnel^ oMappPersonnel;
 	public:
-		CLservices(void);
+		CLservicesPersonnel(void);
 		System::Data::DataSet^ SelectionnerPersonnel(System::String^);
 		void AjouterPersonnel(System::String^, System::String^, System::String^, System::String^, int, int, int);
 		void SupprimerPersonnel(int);
