@@ -102,7 +102,7 @@ namespace ProjectPOO {
 			this->pnlBouton->Dock = System::Windows::Forms::DockStyle::Left;
 			this->pnlBouton->Location = System::Drawing::Point(0, 0);
 			this->pnlBouton->Name = L"pnlBouton";
-			this->pnlBouton->Size = System::Drawing::Size(285, 861);
+			this->pnlBouton->Size = System::Drawing::Size(285, 1179);
 			this->pnlBouton->TabIndex = 1;
 			// 
 			// btnStatistique
@@ -242,7 +242,7 @@ namespace ProjectPOO {
 			this->pnlNom->Dock = System::Windows::Forms::DockStyle::Top;
 			this->pnlNom->Location = System::Drawing::Point(285, 0);
 			this->pnlNom->Name = L"pnlNom";
-			this->pnlNom->Size = System::Drawing::Size(1474, 132);
+			this->pnlNom->Size = System::Drawing::Size(1689, 132);
 			this->pnlNom->TabIndex = 2;
 			// 
 			// lbTop
@@ -253,7 +253,7 @@ namespace ProjectPOO {
 			this->lbTop->ForeColor = System::Drawing::Color::White;
 			this->lbTop->Location = System::Drawing::Point(0, 0);
 			this->lbTop->Name = L"lbTop";
-			this->lbTop->Size = System::Drawing::Size(1474, 132);
+			this->lbTop->Size = System::Drawing::Size(1689, 132);
 			this->lbTop->TabIndex = 0;
 			this->lbTop->Text = L"label1";
 			this->lbTop->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -263,19 +263,19 @@ namespace ProjectPOO {
 			this->pnlData->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->pnlData->Location = System::Drawing::Point(285, 132);
 			this->pnlData->Name = L"pnlData";
-			this->pnlData->Size = System::Drawing::Size(1474, 729);
+			this->pnlData->Size = System::Drawing::Size(1689, 1047);
 			this->pnlData->TabIndex = 3;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1759, 861);
+			this->ClientSize = System::Drawing::Size(1974, 1179);
 			this->Controls->Add(this->pnlData);
 			this->Controls->Add(this->pnlNom);
 			this->Controls->Add(this->pnlBouton);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->MinimumSize = System::Drawing::Size(1785, 932);
+			this->MinimumSize = System::Drawing::Size(2000, 1250);
 			this->Name = L"MyForm";
 			this->Text = L"DynaBase";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);

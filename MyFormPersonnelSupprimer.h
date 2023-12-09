@@ -148,7 +148,7 @@ namespace ProjectPOO {
 			this->Controls->Add(this->lbID);
 			this->Controls->Add(this->lbSupprimer);
 			this->Name = L"PersonnelSupprimer";
-			this->Text = L"PersonnelCreer";
+			this->Text = L"PersonnelSupprimer";
 			this->Load += gcnew System::EventHandler(this, &PersonnelSupprimer::PersonnelSupprimer_Load_1);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);

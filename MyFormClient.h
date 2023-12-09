@@ -1,5 +1,8 @@
-#include "CLserviceClient.h"
 #pragma once
+#include "MyFormClientCreer.h"
+#include "MyFormClientSupprimer.h"
+#include "MyFormClientModifier.h"
+#include "CLserviceClient.h"
 
 namespace ProjectPOO {
 
@@ -210,17 +213,17 @@ namespace ProjectPOO {
 			formulaireActuel = formulaire;
 		}
 	private: System::Void btnCreer_Click(System::Object^ sender, System::EventArgs^ e) {
-		//OuvrirFormulaire(gcnew PersonnelCreer());
+		OuvrirFormulaire(gcnew MyFormClientCreer());
 	}
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		OuvrirFormulaire(gcnew MyFormClientSupprimer());
 	}
 	private: System::Void btnModifier_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		OuvrirFormulaire(gcnew MyFormClientModifier());
 	}
 	private: System::Void MyFormClient_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew NS_Comp_Svc::CLservicesClient();
-
+		OuvrirFormulaire(gcnew MyFormClientCreer());
 	}
 private: System::Void btnAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dgvClient->Refresh();

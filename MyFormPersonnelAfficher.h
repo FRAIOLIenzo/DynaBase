@@ -1,4 +1,5 @@
-#include "CLserviceClient.h"
+#include "CLservicePersonnel.h"
+
 #pragma once
 
 namespace ProjectPOO {
@@ -11,12 +12,12 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de MyFormClientSupprimer
+	/// Description résumée de MyFormPersonnelAfficher
 	/// </summary>
-	public ref class MyFormClientSupprimer : public System::Windows::Forms::Form
+	public ref class MyFormPersonnelAfficher : public System::Windows::Forms::Form
 	{
 	public:
-		MyFormClientSupprimer(void)
+		MyFormPersonnelAfficher(void)
 		{
 			InitializeComponent();
 			//
@@ -28,7 +29,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~MyFormClientSupprimer()
+		~MyFormPersonnelAfficher()
 		{
 			if (components)
 			{
@@ -37,11 +38,12 @@ namespace ProjectPOO {
 		}
 	private: System::Windows::Forms::Label^ lbID;
 	private: System::Windows::Forms::TextBox^ txtID;
-	private: System::Windows::Forms::Label^ lbSupprimer;
+	private: System::Windows::Forms::Label^ lbAfficher;
+
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ btnOK;
 	private: System::Windows::Forms::Button^ btnAnnuler;
-	private: NS_Comp_Svc::CLservicesClient^ oSvc;
+	private: NS_Comp_Svc::CLservicesPersonnel^ oSvc;
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -57,7 +59,7 @@ namespace ProjectPOO {
 		{
 			this->lbID = (gcnew System::Windows::Forms::Label());
 			this->txtID = (gcnew System::Windows::Forms::TextBox());
-			this->lbSupprimer = (gcnew System::Windows::Forms::Label());
+			this->lbAfficher = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->btnOK = (gcnew System::Windows::Forms::Button());
 			this->btnAnnuler = (gcnew System::Windows::Forms::Button());
@@ -85,17 +87,17 @@ namespace ProjectPOO {
 			this->txtID->Size = System::Drawing::Size(621, 31);
 			this->txtID->TabIndex = 1;
 			// 
-			// lbSupprimer
+			// lbAfficher
 			// 
-			this->lbSupprimer->Dock = System::Windows::Forms::DockStyle::Top;
-			this->lbSupprimer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbAfficher->Dock = System::Windows::Forms::DockStyle::Top;
+			this->lbAfficher->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lbSupprimer->Location = System::Drawing::Point(0, 0);
-			this->lbSupprimer->Name = L"lbSupprimer";
-			this->lbSupprimer->Size = System::Drawing::Size(621, 49);
-			this->lbSupprimer->TabIndex = 12;
-			this->lbSupprimer->Text = L"Supprimer";
-			this->lbSupprimer->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->lbAfficher->Location = System::Drawing::Point(0, 0);
+			this->lbAfficher->Name = L"lbAfficher";
+			this->lbAfficher->Size = System::Drawing::Size(621, 49);
+			this->lbAfficher->TabIndex = 12;
+			this->lbAfficher->Text = L"Afficher";
+			this->lbAfficher->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// tableLayoutPanel1
 			// 
@@ -123,7 +125,7 @@ namespace ProjectPOO {
 			this->btnOK->TabIndex = 0;
 			this->btnOK->Text = L"OK";
 			this->btnOK->UseVisualStyleBackColor = true;
-			this->btnOK->Click += gcnew System::EventHandler(this, &MyFormClientSupprimer::btnOK_Click);
+			this->btnOK->Click += gcnew System::EventHandler(this, &MyFormPersonnelAfficher::btnOK_Click);
 			// 
 			// btnAnnuler
 			// 
@@ -134,9 +136,9 @@ namespace ProjectPOO {
 			this->btnAnnuler->TabIndex = 1;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = true;
-			this->btnAnnuler->Click += gcnew System::EventHandler(this, &MyFormClientSupprimer::btnAnnuler_Click);
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &MyFormPersonnelAfficher::btnAnnuler_Click);
 			// 
-			// MyFormClientSupprimer
+			// MyFormPersonnelAfficher
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -146,10 +148,10 @@ namespace ProjectPOO {
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->txtID);
 			this->Controls->Add(this->lbID);
-			this->Controls->Add(this->lbSupprimer);
-			this->Name = L"MyFormClientSupprimer";
-			this->Text = L"MyFormClientSupprimer";
-			this->Load += gcnew System::EventHandler(this, &MyFormClientSupprimer::MyFormClientSupprimer_Load_1);
+			this->Controls->Add(this->lbAfficher);
+			this->Name = L"MyFormPersonnelAfficher";
+			this->Text = L"MyFormPersonnelAfficher";
+			this->Load += gcnew System::EventHandler(this, &MyFormPersonnelAfficher::MyFormPersonnelAfficher_Load_1);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -161,11 +163,11 @@ namespace ProjectPOO {
 		this->txtID->Text = L"";
 	}
 	private: System::Void btnOK_Click(System::Object^ sender, System::EventArgs^ e) {
-		int ID = System::Convert::ToInt32(this->txtID->Text);
-		this->oSvc->SupprimerClient(ID);
+		//int ID = System::Convert::ToInt32(this->txtID->Text);
+		//this->oSvc->AfficherPersonnel(ID);;
 	}
-	private: System::Void MyFormClientSupprimer_Load_1(System::Object^ sender, System::EventArgs^ e) {
-		this->oSvc = gcnew NS_Comp_Svc::CLservicesClient();
+	private: System::Void MyFormPersonnelAfficher_Load_1(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew NS_Comp_Svc::CLservicesPersonnel();
 	}
 	};
 }

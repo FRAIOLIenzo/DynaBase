@@ -111,7 +111,7 @@ namespace ProjectPOO {
 			this->txtNom->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtNom->Location = System::Drawing::Point(0, 78);
 			this->txtNom->Name = L"txtNom";
-			this->txtNom->Size = System::Drawing::Size(669, 31);
+			this->txtNom->Size = System::Drawing::Size(803, 31);
 			this->txtNom->TabIndex = 1;
 			// 
 			// txtPrenom
@@ -120,7 +120,7 @@ namespace ProjectPOO {
 			this->txtPrenom->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtPrenom->Location = System::Drawing::Point(0, 138);
 			this->txtPrenom->Name = L"txtPrenom";
-			this->txtPrenom->Size = System::Drawing::Size(669, 31);
+			this->txtPrenom->Size = System::Drawing::Size(803, 31);
 			this->txtPrenom->TabIndex = 3;
 			// 
 			// lbPrenom
@@ -141,7 +141,7 @@ namespace ProjectPOO {
 			this->txtDateEmbauche->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtDateEmbauche->Location = System::Drawing::Point(0, 198);
 			this->txtDateEmbauche->Name = L"txtDateEmbauche";
-			this->txtDateEmbauche->Size = System::Drawing::Size(669, 31);
+			this->txtDateEmbauche->Size = System::Drawing::Size(803, 31);
 			this->txtDateEmbauche->TabIndex = 5;
 			// 
 			// lbDateEmbauche
@@ -162,7 +162,7 @@ namespace ProjectPOO {
 			this->txtAdresse->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtAdresse->Location = System::Drawing::Point(0, 258);
 			this->txtAdresse->Name = L"txtAdresse";
-			this->txtAdresse->Size = System::Drawing::Size(669, 31);
+			this->txtAdresse->Size = System::Drawing::Size(803, 31);
 			this->txtAdresse->TabIndex = 7;
 			// 
 			// lbAdresse
@@ -183,7 +183,7 @@ namespace ProjectPOO {
 			this->txtNumAdresse->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtNumAdresse->Location = System::Drawing::Point(0, 318);
 			this->txtNumAdresse->Name = L"txtNumAdresse";
-			this->txtNumAdresse->Size = System::Drawing::Size(669, 31);
+			this->txtNumAdresse->Size = System::Drawing::Size(803, 31);
 			this->txtNumAdresse->TabIndex = 9;
 			// 
 			// lbNumAdresse
@@ -204,7 +204,7 @@ namespace ProjectPOO {
 			this->txtCodePostal->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtCodePostal->Location = System::Drawing::Point(0, 378);
 			this->txtCodePostal->Name = L"txtCodePostal";
-			this->txtCodePostal->Size = System::Drawing::Size(669, 31);
+			this->txtCodePostal->Size = System::Drawing::Size(803, 31);
 			this->txtCodePostal->TabIndex = 11;
 			// 
 			// lbCodePostal
@@ -226,7 +226,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->lbCreer->Location = System::Drawing::Point(0, 0);
 			this->lbCreer->Name = L"lbCreer";
-			this->lbCreer->Size = System::Drawing::Size(669, 49);
+			this->lbCreer->Size = System::Drawing::Size(803, 49);
 			this->lbCreer->TabIndex = 12;
 			this->lbCreer->Text = L"Créer";
 			this->lbCreer->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -241,11 +241,11 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->Controls->Add(this->btnOK, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->btnAnnuler, 1, 0);
 			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 580);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 757);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(669, 100);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(803, 100);
 			this->tableLayoutPanel1->TabIndex = 13;
 			// 
 			// btnOK
@@ -253,7 +253,7 @@ namespace ProjectPOO {
 			this->btnOK->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnOK->Location = System::Drawing::Point(3, 3);
 			this->btnOK->Name = L"btnOK";
-			this->btnOK->Size = System::Drawing::Size(328, 94);
+			this->btnOK->Size = System::Drawing::Size(395, 94);
 			this->btnOK->TabIndex = 0;
 			this->btnOK->Text = L"OK";
 			this->btnOK->UseVisualStyleBackColor = true;
@@ -262,9 +262,9 @@ namespace ProjectPOO {
 			// btnAnnuler
 			// 
 			this->btnAnnuler->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->btnAnnuler->Location = System::Drawing::Point(337, 3);
+			this->btnAnnuler->Location = System::Drawing::Point(404, 3);
 			this->btnAnnuler->Name = L"btnAnnuler";
-			this->btnAnnuler->Size = System::Drawing::Size(329, 94);
+			this->btnAnnuler->Size = System::Drawing::Size(396, 94);
 			this->btnAnnuler->TabIndex = 1;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = true;
@@ -276,7 +276,7 @@ namespace ProjectPOO {
 			this->txtRoleID->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtRoleID->Location = System::Drawing::Point(0, 438);
 			this->txtRoleID->Name = L"txtRoleID";
-			this->txtRoleID->Size = System::Drawing::Size(669, 31);
+			this->txtRoleID->Size = System::Drawing::Size(803, 31);
 			this->txtRoleID->TabIndex = 13;
 			// 
 			// lbRoleID
@@ -296,7 +296,7 @@ namespace ProjectPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(669, 680);
+			this->ClientSize = System::Drawing::Size(803, 857);
 			this->ControlBox = false;
 			this->Controls->Add(this->txtRoleID);
 			this->Controls->Add(this->lbRoleID);

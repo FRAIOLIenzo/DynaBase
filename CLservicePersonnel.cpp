@@ -34,6 +34,13 @@ void NS_Comp_Svc::CLservicesPersonnel::SupprimerPersonnel(int clientID)
 	this->oCad->actionRows(sql);
 };
 
+//void NS_Comp_Svc::CLservicesPersonnel::AfficherPersonnel(int clientID)
+//{
+//	System::String^ sql;
+//	sql = this->oMappPersonnel->ShowPersonnel(clientID);
+//	this->oCad->actionRows(sql);
+//};
+
 void NS_Comp_Svc::CLservicesPersonnel::ModifierPersonnel(int ID, System::String^ nom, System::String^ prenom, System::String^ dateembauche, System::String^ adresse, int numadresse, int codepostal, int roleID)
 {
 	System::String^ sql;

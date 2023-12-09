@@ -15,6 +15,12 @@ namespace NS_Comp_Svc
 		void AjouterPersonnel(System::String^, System::String^, System::String^, System::String^, int, int, int);
 		void SupprimerPersonnel(int);
 		void ModifierPersonnel(int, System::String^, System::String^, System::String^, System::String^, int, int, int);
-		
 	};
 }
+
+
+
+
+
+
+//void AfficherPersonnel(int);

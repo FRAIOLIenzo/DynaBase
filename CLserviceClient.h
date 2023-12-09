@@ -12,5 +12,7 @@ namespace NS_Comp_Svc
 	public:
 		CLservicesClient(void);
 		System::Data::DataSet^ SelectionnerClient(System::String^);
+		void AjouterClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, int, int, int, int, int, int);
+		void SupprimerClient(int);
 	};
 }

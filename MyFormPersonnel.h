@@ -45,7 +45,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ btnCreer;
 	private: System::Windows::Forms::Button^ btnSupprimer;
 	private: System::Windows::Forms::Button^ btnModifier;
-	private: System::Windows::Forms::Button^ btnAfficher;
+	private: System::Windows::Forms::Button^ btnAfficherBDD;
+
 	private: System::Windows::Forms::Panel^ pnlMode;
 
 
@@ -54,7 +55,8 @@ namespace ProjectPOO {
 		/// Variable nécessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container ^components;
-		System::Windows::Forms::Form^ formulaireActuel;
+
+		   System::Windows::Forms::Form^ formulaireActuel;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -68,7 +70,7 @@ namespace ProjectPOO {
 			this->btnCreer = (gcnew System::Windows::Forms::Button());
 			this->btnSupprimer = (gcnew System::Windows::Forms::Button());
 			this->btnModifier = (gcnew System::Windows::Forms::Button());
-			this->btnAfficher = (gcnew System::Windows::Forms::Button());
+			this->btnAfficherBDD = (gcnew System::Windows::Forms::Button());
 			this->pnlMode = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPersonnel))->BeginInit();
 			this->SuspendLayout();
@@ -147,26 +149,26 @@ namespace ProjectPOO {
 			this->btnModifier->UseVisualStyleBackColor = false;
 			this->btnModifier->Click += gcnew System::EventHandler(this, &MyFormPersonnel::btnModifier_Click);
 			// 
-			// btnAfficher
+			// btnAfficherBDD
 			// 
-			this->btnAfficher->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+			this->btnAfficherBDD->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->btnAfficher->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
+			this->btnAfficherBDD->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(17)), static_cast<System::Int32>(static_cast<System::Byte>(37)),
 				static_cast<System::Int32>(static_cast<System::Byte>(52)));
-			this->btnAfficher->FlatAppearance->BorderSize = 0;
-			this->btnAfficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnAfficher->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnAfficherBDD->FlatAppearance->BorderSize = 0;
+			this->btnAfficherBDD->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAfficherBDD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnAfficher->ForeColor = System::Drawing::Color::White;
-			this->btnAfficher->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAfficher.Image")));
-			this->btnAfficher->Location = System::Drawing::Point(686, 372);
-			this->btnAfficher->Name = L"btnAfficher";
-			this->btnAfficher->Size = System::Drawing::Size(750, 116);
-			this->btnAfficher->TabIndex = 8;
-			this->btnAfficher->Text = L"Afficher";
-			this->btnAfficher->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
-			this->btnAfficher->UseVisualStyleBackColor = false;
-			this->btnAfficher->Click += gcnew System::EventHandler(this, &MyFormPersonnel::btnAfficher_Click);
+			this->btnAfficherBDD->ForeColor = System::Drawing::Color::White;
+			this->btnAfficherBDD->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAfficherBDD.Image")));
+			this->btnAfficherBDD->Location = System::Drawing::Point(686, 372);
+			this->btnAfficherBDD->Name = L"btnAfficherBDD";
+			this->btnAfficherBDD->Size = System::Drawing::Size(750, 116);
+			this->btnAfficherBDD->TabIndex = 8;
+			this->btnAfficherBDD->Text = L"Afficher";
+			this->btnAfficherBDD->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
+			this->btnAfficherBDD->UseVisualStyleBackColor = false;
+			this->btnAfficherBDD->Click += gcnew System::EventHandler(this, &MyFormPersonnel::btnAfficher_Click);
 			// 
 			// pnlMode
 			// 
@@ -184,7 +186,7 @@ namespace ProjectPOO {
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1448, 658);
 			this->ControlBox = false;
-			this->Controls->Add(this->btnAfficher);
+			this->Controls->Add(this->btnAfficherBDD);
 			this->Controls->Add(this->btnModifier);
 			this->Controls->Add(this->btnSupprimer);
 			this->Controls->Add(this->btnCreer);
