@@ -2,7 +2,7 @@
 
 System::String^ NS_Comp_Mappage::CLmapClient::SelectClient(void)
 {
-	return "SELECT * FROM [BDD_Projet_POO].[dbo].[Client]";
+	return "SELECT C.Client_Id, C.Client_Nom, C.Client_Prenom, C.Client_Naissance, C.Client_Premier_Achat, P.Personnel_Nom AS Personnel_Assigne_Nom, P.Personnel_Prenom AS Personnel_Assigne_Prenom, S.Societe_Nom, S.Societe_Logo, S.Societe_Adresse, S.Numero_Service_Client, Livraison.Livraison_Adresse, Livraison.Livraison_Num_Adresse, Livraison.Livraison_Code_Postal, Facturation.Facturation_Adresse, Facturation.Facturation_Num_Adresse, Facturation.Facturation_Code_Postal FROM Client C JOIN Personnel P ON C.Personnel_Id = P.Personnel_Id JOIN Societe S ON C.Societe_Id = S.Societe_Id JOIN Adresse_de_livraison Livraison ON C.Livraison_Id = Livraison.Livraison_Id JOIN Adresse_de_facturation Facturation ON C.Facturation_Id = Facturation.Facturation_Id; ";
 }
 System::String^ NS_Comp_Mappage::CLmapClient::DeleteClient(int clientID)
 {

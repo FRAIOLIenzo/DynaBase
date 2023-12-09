@@ -332,7 +332,7 @@ namespace ProjectPOO {
 			this->txtCodePostalLivraison->Location = System::Drawing::Point(0, 545);
 			this->txtCodePostalLivraison->Name = L"txtCodePostalLivraison";
 			this->txtCodePostalLivraison->Size = System::Drawing::Size(1394, 31);
-			this->txtCodePostalLivraison->TabIndex = 20;
+			this->txtCodePostalLivraison->TabIndex = 16;
 			// 
 			// label3
 			// 
@@ -353,7 +353,7 @@ namespace ProjectPOO {
 			this->txtNumAdresseLivraison->Location = System::Drawing::Point(0, 485);
 			this->txtNumAdresseLivraison->Name = L"txtNumAdresseLivraison";
 			this->txtNumAdresseLivraison->Size = System::Drawing::Size(1394, 31);
-			this->txtNumAdresseLivraison->TabIndex = 18;
+			this->txtNumAdresseLivraison->TabIndex = 14;
 			// 
 			// label4
 			// 
@@ -374,7 +374,7 @@ namespace ProjectPOO {
 			this->txtAdresseLivraison->Location = System::Drawing::Point(0, 425);
 			this->txtAdresseLivraison->Name = L"txtAdresseLivraison";
 			this->txtAdresseLivraison->Size = System::Drawing::Size(1394, 31);
-			this->txtAdresseLivraison->TabIndex = 16;
+			this->txtAdresseLivraison->TabIndex = 12;
 			// 
 			// label5
 			// 
@@ -407,7 +407,7 @@ namespace ProjectPOO {
 			this->txtCodePostalFacturation->Location = System::Drawing::Point(0, 773);
 			this->txtCodePostalFacturation->Name = L"txtCodePostalFacturation";
 			this->txtCodePostalFacturation->Size = System::Drawing::Size(1394, 31);
-			this->txtCodePostalFacturation->TabIndex = 29;
+			this->txtCodePostalFacturation->TabIndex = 22;
 			// 
 			// label8
 			// 
@@ -428,7 +428,7 @@ namespace ProjectPOO {
 			this->txtNumAdresseFacturation->Location = System::Drawing::Point(0, 713);
 			this->txtNumAdresseFacturation->Name = L"txtNumAdresseFacturation";
 			this->txtNumAdresseFacturation->Size = System::Drawing::Size(1394, 31);
-			this->txtNumAdresseFacturation->TabIndex = 27;
+			this->txtNumAdresseFacturation->TabIndex = 20;
 			// 
 			// label9
 			// 
@@ -449,7 +449,7 @@ namespace ProjectPOO {
 			this->txtAdresseFacturation->Location = System::Drawing::Point(0, 653);
 			this->txtAdresseFacturation->Name = L"txtAdresseFacturation";
 			this->txtAdresseFacturation->Size = System::Drawing::Size(1394, 31);
-			this->txtAdresseFacturation->TabIndex = 25;
+			this->txtAdresseFacturation->TabIndex = 18;
 			// 
 			// label10
 			// 
@@ -491,7 +491,7 @@ namespace ProjectPOO {
 			this->txtNumeroServiceClient->Location = System::Drawing::Point(0, 1001);
 			this->txtNumeroServiceClient->Name = L"txtNumeroServiceClient";
 			this->txtNumeroServiceClient->Size = System::Drawing::Size(1394, 31);
-			this->txtNumeroServiceClient->TabIndex = 36;
+			this->txtNumeroServiceClient->TabIndex = 28;
 			// 
 			// label2
 			// 
@@ -512,7 +512,7 @@ namespace ProjectPOO {
 			this->txtAdresseSociete->Location = System::Drawing::Point(0, 941);
 			this->txtAdresseSociete->Name = L"txtAdresseSociete";
 			this->txtAdresseSociete->Size = System::Drawing::Size(1394, 31);
-			this->txtAdresseSociete->TabIndex = 34;
+			this->txtAdresseSociete->TabIndex = 26;
 			// 
 			// label6
 			// 
@@ -533,7 +533,7 @@ namespace ProjectPOO {
 			this->txtNomSociete->Location = System::Drawing::Point(0, 881);
 			this->txtNomSociete->Name = L"txtNomSociete";
 			this->txtNomSociete->Size = System::Drawing::Size(1394, 31);
-			this->txtNomSociete->TabIndex = 32;
+			this->txtNomSociete->TabIndex = 24;
 			// 
 			// label7
 			// 

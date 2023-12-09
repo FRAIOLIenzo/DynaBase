@@ -2,7 +2,7 @@
 
 System::String^ NS_Comp_Mappage::CLmapPersonnel::SelectPersonnel(void)
 {
-	return "SELECT * FROM [BDD_Projet_POO].[dbo].[Personnel]";
+	return "SELECT P.Personnel_Id, P.Personnel_Nom, P.Personnel_Prenom, P.Personnel_Embauche, P.Personnel_Adresse, P.Personnel_Num_Adresse, P.Personnel_Code_Postal, R.Roles_Nom AS Nom_Role FROM Personnel P JOIN Roles R ON P.Roles_Id = R.Roles_Id; ";
 }
 
 System::String^ NS_Comp_Mappage::CLmapPersonnel::InsertPersonnel(void)
