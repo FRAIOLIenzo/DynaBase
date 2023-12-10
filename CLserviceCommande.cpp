@@ -39,9 +39,7 @@ void NS_Comp_Svc::CLservicesCommande::AjouterCommande(System::String^ commandeID
 void NS_Comp_Svc::CLservicesCommande::SupprimerCommande(System::String^ commandeID)
 {
 	System::String^ sql;
-	this->oMappCommande->setCommandeID(commandeID);
-
-	sql = this->oMappCommande->DeleteCommande();
+	sql = this->oMappCommande->DeleteCommande(commandeID);
 	this->oCad->actionRows(sql);
 }
 

@@ -25,7 +25,7 @@ namespace NS_Comp_Mappage
 	public:
 		System::String^ SelectCommande(void);
 		System::String^ InsertCommande(void);
-		System::String^ DeleteCommande(void);
+		System::String^ DeleteCommande(System::String^);
 		System::String^ UpdateCommande(void);
 
 		void setCommandeID(System::String^);

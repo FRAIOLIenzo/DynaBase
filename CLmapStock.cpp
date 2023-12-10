@@ -2,7 +2,7 @@
 
 System::String^ NS_Comp_Mappage::CLmapStock::SelectStock(void)
 {
-	return "SELECT * FROM [BDD_Projet_POO].[dbo].[Article]";
+	return "SELECT A.Article_Id, A.Article_Nom, A.Article_Quantite, A.Article_Seuil, A.Article_Taux_TVA, C.Commande_Id, C.Prevision_Livraison, C.Emission_Livraison, C.Reception_Livraison, C.Total_Article, C.Personnel_Id, C.Facture_Id FROM Article A INNER JOIN Commande C ON A.Commande_Id = C.Commande_Id; ";
 }
 System::String^ NS_Comp_Mappage::CLmapStock::InsertStock(void)
 {

@@ -2,15 +2,15 @@
 
 System::String^ NS_Comp_Mappage::CLmapCommande::SelectCommande(void)
 {
-	return "SELECT * FROM [BDD_Projet_POO].[dbo].[Commande]";
+	return "SELECT C.Commande_Id, C.Prevision_Livraison, C.Emission_Livraison, C.Reception_Livraison, C.Total_Article, F.Facture_Id, F.Montant_HT, F.Montant_TVA, F.Montant_TTC, P.Paiement_Id, P.Execution_Paiement, P.Moyen_Paiement FROM Commande C INNER JOIN Facture F ON C.Facture_Id = F.Facture_Id LEFT JOIN Paiement P ON C.Commande_Id = P.Commande_Id;";
 }
 System::String^ NS_Comp_Mappage::CLmapCommande::InsertCommande(void)
 {
 	return "DECLARE @commandeId VARCHAR(255); DECLARE @factureId INT; INSERT INTO Facture (Montant_HT, Montant_TVA, Montant_TTC, Facture_Emission, Societe_Id) VALUES ('" + this->HT + "', '" + this->TVA + "', '" + this->TTC + "', '" + this->dateemissionfacture + "', '" + this->societeID + "'); SET @factureId = SCOPE_IDENTITY(); INSERT INTO Commande (Commande_Id, Prevision_Livraison, Emission_Livraison, Reception_Livraison, Total_Article, Personnel_Id, Facture_Id) VALUES ('" + this->commandeID + "', '" + this->dateprevision + "', '" + this->dateemission + "', '" + this->datereception + "', '" + this->totalarticle + "', '" + this->personnelID + "', @factureId); SET @commandeId = '" + this->commandeID + "'; INSERT INTO Paiement (Execution_Paiement, Moyen_Paiement, Commande_Id) VALUES ('" + this->executionpaiement + "', '" + this->moyenpaiement + "', @commandeId); ";
 }
-System::String^ NS_Comp_Mappage::CLmapCommande::DeleteCommande(void)
+System::String^ NS_Comp_Mappage::CLmapCommande::DeleteCommande(System::String^ CommandeID)
 {
-	return "DELETE FROM [BDD_Projet_POO].[dbo].[Commande] WHERE [Commande_Id] = " + this->commandeID + ";";
+	return "DELETE FROM [BDD_Projet_POO].[dbo].[Commande] WHERE [Commande_Id] =  " + commandeID + " ;";
 }
 System::String^ NS_Comp_Mappage::CLmapCommande::UpdateCommande(void)
 {
