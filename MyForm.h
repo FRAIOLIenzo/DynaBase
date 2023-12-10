@@ -61,7 +61,7 @@ namespace ProjectPOO {
 		/// Variable nécessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container^ components;
-	private: System::Windows::Forms::Button^ Exit;
+
 		   System::Windows::Forms::Form^ formulaireActuel;
 
 
@@ -74,7 +74,6 @@ namespace ProjectPOO {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->pnlBouton = (gcnew System::Windows::Forms::Panel());
-			this->Exit = (gcnew System::Windows::Forms::Button());
 			this->btnStatistique = (gcnew System::Windows::Forms::Button());
 			this->btnStock = (gcnew System::Windows::Forms::Button());
 			this->btnCommande = (gcnew System::Windows::Forms::Button());
@@ -95,7 +94,6 @@ namespace ProjectPOO {
 			// 
 			this->pnlBouton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(76)));
-			this->pnlBouton->Controls->Add(this->Exit);
 			this->pnlBouton->Controls->Add(this->btnStatistique);
 			this->pnlBouton->Controls->Add(this->btnStock);
 			this->pnlBouton->Controls->Add(this->btnCommande);
@@ -107,25 +105,6 @@ namespace ProjectPOO {
 			this->pnlBouton->Name = L"pnlBouton";
 			this->pnlBouton->Size = System::Drawing::Size(285, 1179);
 			this->pnlBouton->TabIndex = 1;
-			// 
-			// Exit
-			// 
-			this->Exit->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->Exit->FlatAppearance->BorderSize = 0;
-			this->Exit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Exit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Exit->ForeColor = System::Drawing::Color::White;
-			this->Exit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Exit.Image")));
-			this->Exit->Location = System::Drawing::Point(0, 1079);
-			this->Exit->Name = L"Exit";
-			this->Exit->Padding = System::Windows::Forms::Padding(12, 12, 0, 0);
-			this->Exit->Size = System::Drawing::Size(285, 100);
-			this->Exit->TabIndex = 6;
-			this->Exit->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->Exit->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->Exit->UseVisualStyleBackColor = false;
-			this->Exit->Click += gcnew System::EventHandler(this, &MyForm::Exit_Click);
 			// 
 			// btnStatistique
 			// 

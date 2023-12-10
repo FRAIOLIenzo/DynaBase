@@ -161,8 +161,15 @@ namespace ProjectPOO {
 		this->txtID->Text = L"";
 	}
 	private: System::Void btnOK_Click(System::Object^ sender, System::EventArgs^ e) {
-		int ID = System::Convert::ToInt32(this->txtID->Text);
-		this->oSvc->SupprimerClient(ID);
+		if (String::IsNullOrWhiteSpace(txtID->Text))
+		{
+			MessageBox::Show("Veuillez remplir toutes les informations.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else
+		{
+			int ID = System::Convert::ToInt32(this->txtID->Text);
+			this->oSvc->SupprimerClient(ID);
+		}
 	}
 	private: System::Void MyFormClientSupprimer_Load_1(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc = gcnew NS_Comp_Svc::CLservicesClient();

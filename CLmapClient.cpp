@@ -12,7 +12,11 @@ System::String^ NS_Comp_Mappage::CLmapClient::InsertClient(void)
 {
 	return "INSERT INTO [BDD_Projet_POO].[dbo].[Societe] (Societe_Nom, Societe_Logo, Societe_Adresse, Numero_Service_Client) VALUES ('" + this->nomsociete + "', '', '" + this->adressesociete + "',' " + this->numserviceclient + "'); DECLARE @societeId INT; SET @societeId = SCOPE_IDENTITY(); INSERT INTO Adresse_de_livraison (Livraison_Adresse, Livraison_Num_Adresse, Livraison_Code_Postal) VALUES ('" + this->adresselivraison + "', '" + this->numadresselivraison + "', '" + this->codepostallivraison + "'); DECLARE @livraisonId INT; SET @livraisonId = SCOPE_IDENTITY(); INSERT INTO Adresse_de_facturation (Facturation_Adresse, Facturation_Num_Adresse, Facturation_Code_Postal) VALUES ( '" + this->adressefacturation + "',  '" + this->numadressefacturation + "',  '" + this->codepostalfacturation + "'); DECLARE @facturationId INT; SET @facturationId = SCOPE_IDENTITY(); INSERT INTO Client (Client_Nom, Client_Prenom, Client_Naissance, Client_Premier_Achat, Societe_Id, Livraison_Id, Facturation_Id, Personnel_Id) VALUES ('" + this->nom + "', '" + this->prenom + "', '" + this->datenaissance + "', '" + this->datepremierachat + "', @societeId, @livraisonId, @facturationId, '" + this->IDpersonnel + "'); ";
 }
+System::String^ NS_Comp_Mappage::CLmapClient::UpdateClient(void)
+{
+	return "DECLARE @societeId INT, @livraisonId INT, @facturationId INT; UPDATE Societe SET Societe_Nom = '" + this->nomsociete + "', Societe_Adresse = '" + this->adressesociete + "', Numero_Service_Client = '" + this->numserviceclient + "' WHERE Societe_Id = (SELECT Societe_Id FROM Client WHERE Client_Id = " + this->IDclient + "); UPDATE Adresse_de_livraison SET Livraison_Adresse = '" + this->adresselivraison + "', Livraison_Num_Adresse = '" + this->numadresselivraison + "', Livraison_Code_Postal = '" + this->codepostallivraison + "' WHERE Livraison_Id = (SELECT Livraison_Id FROM Client WHERE Client_Id = " + this->IDclient + "); UPDATE Adresse_de_facturation SET Facturation_Adresse = '" + this->adressefacturation + "', Facturation_Num_Adresse = '" + this->numadressefacturation + "', Facturation_Code_Postal = '" + this->codepostalfacturation + "' WHERE Facturation_Id = (SELECT Facturation_Id FROM Client WHERE Client_Id = " + this->IDclient + "); UPDATE Client SET Client_Nom = '" + this->nom + "', Client_Prenom = '" + this->prenom + "', Client_Naissance = '" + this->datenaissance + "', Client_Premier_Achat = '" + this->datepremierachat + "', Personnel_Id = '" + this->IDpersonnel + "' WHERE Client_Id = " + this->IDclient + ";";
 
+}
 void NS_Comp_Mappage::CLmapClient::setNom(System::String^ nom)
 {
 	this->nom = nom;
@@ -68,4 +72,8 @@ void NS_Comp_Mappage::CLmapClient::setNumServiceClient(int numserviceclient)
 void NS_Comp_Mappage::CLmapClient::setIDpersonnel(int IDpersonnel)
 {
 	this->IDpersonnel = IDpersonnel;
+}
+void NS_Comp_Mappage::CLmapClient::setIDclient(int IDclient)
+{
+	this->IDclient = IDclient;
 }

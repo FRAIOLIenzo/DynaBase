@@ -20,11 +20,13 @@ namespace NS_Comp_Mappage
 		int codepostalfacturation;
 		int numserviceclient;
 		int IDpersonnel;
+		int IDclient;
 
 	public:
 		System::String^ SelectClient(void);
 		System::String^ DeleteClient(int);
 		System::String^ InsertClient(void);
+		System::String^ UpdateClient(void);
 
 		void setNom(System::String^);
 		void setPrenom(System::String^);
@@ -40,6 +42,7 @@ namespace NS_Comp_Mappage
 		void setCodePostalLivraison(int);
 		void setCodePostalFacturation(int);
 		void setIDpersonnel(int);
+		void setIDclient(int);
 	};
 }
 

@@ -359,12 +359,28 @@ namespace ProjectPOO {
 	}
 
 	private: System::Void btnOK_Click(System::Object^ sender, System::EventArgs^ e) {
-		int ID = System::Convert::ToInt32(this->txtID->Text);
-		int NumAdresse = System::Convert::ToInt32(this->txtNumAdresse->Text);
-		int CodePostal = System::Convert::ToInt32(this->txtCodePostal->Text);
-		int RoleID = System::Convert::ToInt32(this->txtRoleID->Text);
-		this->oSvc->ModifierPersonnel(ID, this->txtNom->Text, this->txtPrenom->Text, this->txtDateEmbauche->Text, this->txtAdresse->Text, NumAdresse, CodePostal, RoleID);
-	}
+		if (String::IsNullOrWhiteSpace(txtID->Text) ||
+			String::IsNullOrWhiteSpace(txtNom->Text) ||
+			String::IsNullOrWhiteSpace(txtPrenom->Text) ||
+			String::IsNullOrWhiteSpace(txtDateEmbauche->Text) ||
+			String::IsNullOrWhiteSpace(txtAdresse->Text) ||
+			String::IsNullOrWhiteSpace(txtNumAdresse->Text) ||
+			String::IsNullOrWhiteSpace(txtCodePostal->Text) ||
+			String::IsNullOrWhiteSpace(txtRoleID->Text))
+		{
+			MessageBox::Show("Veuillez remplir toutes les informations.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else
+		{
+
+			int ID = System::Convert::ToInt32(this->txtID->Text);
+			int NumAdresse = System::Convert::ToInt32(this->txtNumAdresse->Text);
+			int CodePostal = System::Convert::ToInt32(this->txtCodePostal->Text);
+			int RoleID = System::Convert::ToInt32(this->txtRoleID->Text);
+			this->oSvc->ModifierPersonnel(ID, this->txtNom->Text, this->txtPrenom->Text, this->txtDateEmbauche->Text, this->txtAdresse->Text, NumAdresse, CodePostal, RoleID);
+
+		}
+}
 
 private: System::Void PersonnelModifier_Load(System::Object^ sender, System::EventArgs^ e) {
 	this->oSvc = gcnew NS_Comp_Svc::CLservicesPersonnel();

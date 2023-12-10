@@ -105,28 +105,6 @@ namespace ProjectPOO {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -613,13 +591,34 @@ private: System::Void MyFormClientCreer_Load_1(System::Object^ sender, System::E
 	this->oSvc = gcnew NS_Comp_Svc::CLservicesClient();
 }
 private: System::Void btnOK_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	int NumAdresseLivraison = System::Convert::ToInt32(this->txtNumAdresseLivraison->Text);
-	int CodePostalLivraison = System::Convert::ToInt32(this->txtCodePostalLivraison->Text);
-	int NumAdresseFacturation = System::Convert::ToInt32(this->txtNumAdresseFacturation->Text);
-	int CodePostalFacturation = System::Convert::ToInt32(this->txtCodePostalFacturation->Text);
-	int PersonnelID = System::Convert::ToInt32(this->txtPersonnelID->Text);
-	int NumServiceClient = System::Convert::ToInt32(this->txtNumeroServiceClient->Text);
-	this->oSvc->AjouterClient(this->txtNom->Text, this->txtPrenom->Text, this->txtDateNaissance->Text, this->txtDatePremierAchat->Text, this->txtAdresseLivraison->Text, this->txtAdresseFacturation->Text, this->txtNomSociete->Text, this->txtAdresseSociete->Text, NumServiceClient, NumAdresseLivraison, NumAdresseFacturation, CodePostalLivraison, CodePostalFacturation, PersonnelID);
+
+	if (String::IsNullOrWhiteSpace(txtNom->Text) ||
+		String::IsNullOrWhiteSpace(txtPrenom->Text) ||
+		String::IsNullOrWhiteSpace(txtDateNaissance->Text) ||
+		String::IsNullOrWhiteSpace(txtDatePremierAchat->Text) ||
+		String::IsNullOrWhiteSpace(txtAdresseLivraison->Text) ||
+		String::IsNullOrWhiteSpace(txtNumAdresseLivraison->Text) ||
+		String::IsNullOrWhiteSpace(txtCodePostalLivraison->Text) ||
+		String::IsNullOrWhiteSpace(txtAdresseFacturation->Text) ||
+		String::IsNullOrWhiteSpace(txtNumAdresseFacturation->Text) ||
+		String::IsNullOrWhiteSpace(txtCodePostalFacturation->Text) ||
+		String::IsNullOrWhiteSpace(txtNomSociete->Text) ||
+		String::IsNullOrWhiteSpace(txtAdresseSociete->Text) ||
+		String::IsNullOrWhiteSpace(txtNumeroServiceClient->Text) ||
+		String::IsNullOrWhiteSpace(txtPersonnelID->Text))
+	{
+		MessageBox::Show("Veuillez remplir toutes les informations.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else
+	{
+		int NumAdresseLivraison = System::Convert::ToInt32(this->txtNumAdresseLivraison->Text);
+		int CodePostalLivraison = System::Convert::ToInt32(this->txtCodePostalLivraison->Text);
+		int NumAdresseFacturation = System::Convert::ToInt32(this->txtNumAdresseFacturation->Text);
+		int CodePostalFacturation = System::Convert::ToInt32(this->txtCodePostalFacturation->Text);
+		int PersonnelID = System::Convert::ToInt32(this->txtPersonnelID->Text);
+		int NumServiceClient = System::Convert::ToInt32(this->txtNumeroServiceClient->Text);
+		this->oSvc->AjouterClient(this->txtNom->Text, this->txtPrenom->Text, this->txtDateNaissance->Text, this->txtDatePremierAchat->Text, this->txtAdresseLivraison->Text, this->txtAdresseFacturation->Text, this->txtNomSociete->Text, this->txtAdresseSociete->Text, NumServiceClient, NumAdresseLivraison, NumAdresseFacturation, CodePostalLivraison, CodePostalFacturation, PersonnelID);
+	}
 }
 private: System::Void btnAnnuler_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	this->txtNom->Text = L"";

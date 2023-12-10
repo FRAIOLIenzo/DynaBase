@@ -14,5 +14,6 @@ namespace NS_Comp_Svc
 		System::Data::DataSet^ SelectionnerClient(System::String^);
 		void AjouterClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, int, int, int, int, int, int);
 		void SupprimerClient(int);
+		void ModifierClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, int, int, int, int, int, int, int);
 	};
 }

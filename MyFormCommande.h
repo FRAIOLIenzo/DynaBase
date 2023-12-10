@@ -1,5 +1,7 @@
-
-
+#include "MyFormCommandeCreer.h"
+#include "MyFormCommandeSupprimer.h"
+#include "MyFormCommandeModifier.h"
+#include "CLserviceCommande.h"
 #pragma once
 
 namespace ProjectPOO {
@@ -36,23 +38,15 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
-
-	protected:
-
-
-
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dgvCommande;
 	private: System::Windows::Forms::Button^ btnCreer;
 	private: System::Windows::Forms::Button^ btnSupprimer;
 	private: System::Windows::Forms::Button^ btnModifier;
-
-
 	private: System::Windows::Forms::Button^ btnAfficher;
 	private: System::Windows::Forms::Panel^ pnlMode;
+	private: NS_Comp_Svc::CLservicesCommande^ oSvc;
+	private: System::Data::DataSet^ oDs;
 
-
-
-	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
@@ -67,27 +61,27 @@ namespace ProjectPOO {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormCommande::typeid));
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dgvCommande = (gcnew System::Windows::Forms::DataGridView());
 			this->btnCreer = (gcnew System::Windows::Forms::Button());
 			this->btnSupprimer = (gcnew System::Windows::Forms::Button());
 			this->btnModifier = (gcnew System::Windows::Forms::Button());
 			this->btnAfficher = (gcnew System::Windows::Forms::Button());
 			this->pnlMode = (gcnew System::Windows::Forms::Panel());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCommande))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// dataGridView1
+			// dgvCommande
 			// 
-			this->dataGridView1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->dgvCommande->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(686, 12);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 82;
-			this->dataGridView1->RowTemplate->Height = 33;
-			this->dataGridView1->Size = System::Drawing::Size(750, 321);
-			this->dataGridView1->TabIndex = 4;
+			this->dgvCommande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgvCommande->Location = System::Drawing::Point(686, 12);
+			this->dgvCommande->Name = L"dgvCommande";
+			this->dgvCommande->RowHeadersWidth = 82;
+			this->dgvCommande->RowTemplate->Height = 33;
+			this->dgvCommande->Size = System::Drawing::Size(750, 321);
+			this->dgvCommande->TabIndex = 4;
 			// 
 			// btnCreer
 			// 
@@ -169,6 +163,7 @@ namespace ProjectPOO {
 			this->btnAfficher->Text = L"Afficher";
 			this->btnAfficher->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
 			this->btnAfficher->UseVisualStyleBackColor = false;
+			this->btnAfficher->Click += gcnew System::EventHandler(this, &MyFormCommande::btnAfficher_Click);
 			// 
 			// pnlMode
 			// 
@@ -190,12 +185,12 @@ namespace ProjectPOO {
 			this->Controls->Add(this->btnModifier);
 			this->Controls->Add(this->btnSupprimer);
 			this->Controls->Add(this->btnCreer);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dgvCommande);
 			this->Controls->Add(this->pnlMode);
 			this->Name = L"MyFormCommande";
 			this->Text = L"MyFormCommande";
 			this->Load += gcnew System::EventHandler(this, &MyFormCommande::MyFormCommande_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCommande))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -213,16 +208,24 @@ namespace ProjectPOO {
 			formulaireActuel = formulaire;
 		}
 	private: System::Void btnCreer_Click(System::Object^ sender, System::EventArgs^ e) {
-		//OuvrirFormulaire(gcnew PersonnelCreer());
+		OuvrirFormulaire(gcnew MyFormCommandeCreer());
 	}
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		OuvrirFormulaire(gcnew MyFormCommandeSupprimer());
 	}
 	private: System::Void btnModifier_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		OuvrirFormulaire(gcnew MyFormCommandeModifier());
 	}
 	private: System::Void MyFormCommande_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew NS_Comp_Svc::CLservicesCommande();
+		OuvrirFormulaire(gcnew MyFormCommandeCreer());
 
 	}
+private: System::Void btnAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dgvCommande->Refresh();
+	this->oDs = this->oSvc->SelectionnerCommande("Rsl");
+	this->dgvCommande->DataSource = this->oDs;
+	this->dgvCommande->DataMember = "Rsl";
+}
 };
 }

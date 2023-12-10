@@ -1,5 +1,7 @@
-
-
+#include "MyFormStockCreer.h"
+#include "MyFormStockSupprimer.h"
+#include "MyFormStockModifier.h"
+#include "CLserviceStock.h"
 #pragma once
 
 namespace ProjectPOO {
@@ -36,12 +38,15 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::DataGridView^ dgvStock;
+	protected:
 
 	protected:
 
+	private: NS_Comp_Svc::CLservicesStock^ oSvc;
+	private: System::Data::DataSet^ oDs;
 
 
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ btnCreer;
 	private: System::Windows::Forms::Button^ btnSupprimer;
 	private: System::Windows::Forms::Button^ btnModifier;
@@ -67,27 +72,27 @@ namespace ProjectPOO {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormStock::typeid));
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dgvStock = (gcnew System::Windows::Forms::DataGridView());
 			this->btnCreer = (gcnew System::Windows::Forms::Button());
 			this->btnSupprimer = (gcnew System::Windows::Forms::Button());
 			this->btnModifier = (gcnew System::Windows::Forms::Button());
 			this->btnAfficher = (gcnew System::Windows::Forms::Button());
 			this->pnlMode = (gcnew System::Windows::Forms::Panel());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvStock))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// dataGridView1
+			// dgvStock
 			// 
-			this->dataGridView1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->dgvStock->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(686, 12);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 82;
-			this->dataGridView1->RowTemplate->Height = 33;
-			this->dataGridView1->Size = System::Drawing::Size(750, 321);
-			this->dataGridView1->TabIndex = 4;
+			this->dgvStock->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgvStock->Location = System::Drawing::Point(686, 12);
+			this->dgvStock->Name = L"dgvStock";
+			this->dgvStock->RowHeadersWidth = 82;
+			this->dgvStock->RowTemplate->Height = 33;
+			this->dgvStock->Size = System::Drawing::Size(750, 321);
+			this->dgvStock->TabIndex = 4;
 			// 
 			// btnCreer
 			// 
@@ -169,6 +174,7 @@ namespace ProjectPOO {
 			this->btnAfficher->Text = L"Afficher";
 			this->btnAfficher->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
 			this->btnAfficher->UseVisualStyleBackColor = false;
+			this->btnAfficher->Click += gcnew System::EventHandler(this, &MyFormStock::btnAfficher_Click);
 			// 
 			// pnlMode
 			// 
@@ -190,12 +196,12 @@ namespace ProjectPOO {
 			this->Controls->Add(this->btnModifier);
 			this->Controls->Add(this->btnSupprimer);
 			this->Controls->Add(this->btnCreer);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dgvStock);
 			this->Controls->Add(this->pnlMode);
 			this->Name = L"MyFormStock";
 			this->Text = L"MyFormPersonnel";
 			this->Load += gcnew System::EventHandler(this, &MyFormStock::MyFormStock_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvStock))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -213,16 +219,23 @@ namespace ProjectPOO {
 			formulaireActuel = formulaire;
 		}
 	private: System::Void btnCreer_Click(System::Object^ sender, System::EventArgs^ e) {
-		//OuvrirFormulaire(gcnew PersonnelCreer());
+		OuvrirFormulaire(gcnew MyFormStockCreer());
 	}
 	private: System::Void btnSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		OuvrirFormulaire(gcnew MyFormStockSupprimer());
 	}
 	private: System::Void btnModifier_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		OuvrirFormulaire(gcnew MyFormStockModifier());
 	}
 	private: System::Void MyFormStock_Load(System::Object^ sender, System::EventArgs^ e) {
-
+		OuvrirFormulaire(gcnew MyFormStockCreer());
+		this->oSvc = gcnew NS_Comp_Svc::CLservicesStock();
 	}
+private: System::Void btnAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dgvStock->Refresh();
+	this->oDs = this->oSvc->SelectionnerStock("Rsl");
+	this->dgvStock->DataSource = this->oDs;
+	this->dgvStock->DataMember = "Rsl";
+}
 };
 }

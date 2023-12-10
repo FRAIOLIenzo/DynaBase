@@ -123,9 +123,13 @@
   <ItemGroup>
     <ClCompile Include="CLcad.cpp" />
     <ClCompile Include="CLmapClient.cpp" />
+    <ClCompile Include="CLmapCommande.cpp" />
     <ClCompile Include="CLmapPersonnel.cpp" />
+    <ClCompile Include="CLmapStock.cpp" />
     <ClCompile Include="CLserviceClient.cpp" />
+    <ClCompile Include="CLserviceCommande.cpp" />
     <ClCompile Include="CLservicePersonnel.cpp" />
+    <ClCompile Include="CLserviceStock.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyFormAccueil.cpp" />
@@ -134,6 +138,9 @@
     <ClCompile Include="MyFormClientModifier.cpp" />
     <ClCompile Include="MyFormClientSupprimer.cpp" />
     <ClCompile Include="MyFormCommande.cpp" />
+    <ClCompile Include="MyFormCommandeCreer.cpp" />
+    <ClCompile Include="MyFormCommandeModifier.cpp" />
+    <ClCompile Include="MyFormCommandeSupprimer.cpp" />
     <ClCompile Include="MyFormPersonnel.cpp" />
     <ClCompile Include="MyFormPersonnelAfficher.cpp" />
     <ClCompile Include="MyFormStatistique.cpp" />
@@ -141,13 +148,20 @@
     <ClCompile Include="MyFormPersonnelCreer.cpp" />
     <ClCompile Include="MyFormPersonnelModifier.cpp" />
     <ClCompile Include="MyFormPersonnelSupprimer.cpp" />
+    <ClCompile Include="MyFormStockCreer.cpp" />
+    <ClCompile Include="MyFormStockModifier.cpp" />
+    <ClCompile Include="MyFormStockSupprimer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLcad.h" />
     <ClInclude Include="CLmapClient.h" />
+    <ClInclude Include="CLmapCommande.h" />
     <ClInclude Include="CLmapPersonnel.h" />
+    <ClInclude Include="CLmapStock.h" />
     <ClInclude Include="CLserviceClient.h" />
+    <ClInclude Include="CLserviceCommande.h" />
     <ClInclude Include="CLservicePersonnel.h" />
+    <ClInclude Include="CLserviceStock.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -167,6 +181,15 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyFormCommande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormCommandeCreer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormCommandeModifier.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormCommandeSupprimer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyFormPersonnel.h">
@@ -190,6 +213,15 @@
     <ClInclude Include="MyFormPersonnelSupprimer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyFormStockCreer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormStockModifier.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormStockSupprimer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -204,11 +236,23 @@
     <EmbeddedResource Include="MyFormClientCreer.resx">
       <DependentUpon>MyFormClientCreer.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyFormClientModifier.resx">
+      <DependentUpon>MyFormClientModifier.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyFormClientSupprimer.resx">
       <DependentUpon>MyFormClientSupprimer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyFormCommande.resx">
       <DependentUpon>MyFormCommande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCommandeCreer.resx">
+      <DependentUpon>MyFormCommandeCreer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCommandeModifier.resx">
+      <DependentUpon>MyFormCommandeModifier.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCommandeSupprimer.resx">
+      <DependentUpon>MyFormCommandeSupprimer.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyFormPersonnel.resx">
       <DependentUpon>MyFormPersonnel.h</DependentUpon>
@@ -230,6 +274,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyFormPersonnelSupprimer.resx">
       <DependentUpon>MyFormPersonnelSupprimer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormStockCreer.resx">
+      <DependentUpon>MyFormStockCreer.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormStockModifier.resx">
+      <DependentUpon>MyFormStockModifier.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormStockSupprimer.resx">
+      <DependentUpon>MyFormStockSupprimer.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

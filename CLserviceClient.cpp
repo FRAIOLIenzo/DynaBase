@@ -35,6 +35,30 @@ void NS_Comp_Svc::CLservicesClient::AjouterClient(System::String^ nom, System::S
 	this->oCad->actionRows(sql);
 }
 
+void NS_Comp_Svc::CLservicesClient::ModifierClient(System::String^ nom, System::String^ prenom, System::String^ datenaissance, System::String^ datepremierachat, System::String^ adresselivraison, System::String^ adressefacturation, System::String^ nomsociete, System::String^ adressesociete, int numserviceclient, int numadresselivraison, int numadressefacturation, int codepostallivraison, int codepostalfacturation, int IDpersonnel, int IDclient)
+{
+	System::String^ sql;
+	this->oMappClient->setNom(nom);
+	this->oMappClient->setPrenom(prenom);
+	this->oMappClient->setDateNaissance(datenaissance);
+	this->oMappClient->setDatePremierAchat(datepremierachat);
+	this->oMappClient->setAdresseLivraison(adresselivraison);
+	this->oMappClient->setAdresseFacturation(adressefacturation);
+	this->oMappClient->setNomSociete(nomsociete);
+	this->oMappClient->setAdresseSociete(adressesociete);
+	this->oMappClient->setNumServiceClient(numserviceclient);
+	this->oMappClient->setNumAdresseLivraison(numadresselivraison);
+	this->oMappClient->setNumAdresseFacturation(numadressefacturation);
+	this->oMappClient->setCodePostalLivraison(codepostallivraison);
+	this->oMappClient->setCodePostalFacturation(codepostalfacturation);
+	this->oMappClient->setIDpersonnel(IDpersonnel);
+	this->oMappClient->setIDclient(IDclient);
+
+	sql = this->oMappClient->UpdateClient();
+
+	this->oCad->actionRows(sql);
+}
+
 void NS_Comp_Svc::CLservicesClient::SupprimerClient(int clientID)
 {
 	System::String^ sql;

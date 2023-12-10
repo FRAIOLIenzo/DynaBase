@@ -1,4 +1,4 @@
-#include "CLservicePersonnel.h"
+#include "CLserviceCommande.h"
 #pragma once
 
 namespace ProjectPOO {
@@ -11,12 +11,12 @@ namespace ProjectPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de PersonnelSupprimer
+	/// Description résumée de MyFormCommandeSupprimer
 	/// </summary>
-	public ref class PersonnelSupprimer : public System::Windows::Forms::Form
+	public ref class MyFormCommandeSupprimer : public System::Windows::Forms::Form
 	{
 	public:
-		PersonnelSupprimer(void)
+		MyFormCommandeSupprimer(void)
 		{
 			InitializeComponent();
 			//
@@ -28,7 +28,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~PersonnelSupprimer()
+		~MyFormCommandeSupprimer()
 		{
 			if (components)
 			{
@@ -41,7 +41,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ btnOK;
 	private: System::Windows::Forms::Button^ btnAnnuler;
-	private: NS_Comp_Svc::CLservicesPersonnel^ oSvc;
+	private: NS_Comp_Svc::CLservicesCommande^ oSvc;
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -82,7 +82,7 @@ namespace ProjectPOO {
 			this->txtID->Dock = System::Windows::Forms::DockStyle::Top;
 			this->txtID->Location = System::Drawing::Point(0, 78);
 			this->txtID->Name = L"txtID";
-			this->txtID->Size = System::Drawing::Size(621, 31);
+			this->txtID->Size = System::Drawing::Size(459, 31);
 			this->txtID->TabIndex = 1;
 			// 
 			// lbSupprimer
@@ -92,7 +92,7 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->lbSupprimer->Location = System::Drawing::Point(0, 0);
 			this->lbSupprimer->Name = L"lbSupprimer";
-			this->lbSupprimer->Size = System::Drawing::Size(621, 49);
+			this->lbSupprimer->Size = System::Drawing::Size(459, 49);
 			this->lbSupprimer->TabIndex = 12;
 			this->lbSupprimer->Text = L"Supprimer";
 			this->lbSupprimer->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -107,11 +107,11 @@ namespace ProjectPOO {
 			this->tableLayoutPanel1->Controls->Add(this->btnOK, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->btnAnnuler, 1, 0);
 			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 463);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 543);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(621, 100);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(459, 100);
 			this->tableLayoutPanel1->TabIndex = 13;
 			// 
 			// btnOK
@@ -119,37 +119,37 @@ namespace ProjectPOO {
 			this->btnOK->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->btnOK->Location = System::Drawing::Point(3, 3);
 			this->btnOK->Name = L"btnOK";
-			this->btnOK->Size = System::Drawing::Size(304, 94);
+			this->btnOK->Size = System::Drawing::Size(223, 94);
 			this->btnOK->TabIndex = 0;
 			this->btnOK->Text = L"OK";
 			this->btnOK->UseVisualStyleBackColor = true;
-			this->btnOK->Click += gcnew System::EventHandler(this, &PersonnelSupprimer::btnOK_Click);
+			this->btnOK->Click += gcnew System::EventHandler(this, &MyFormCommandeSupprimer::btnOK_Click);
 			// 
 			// btnAnnuler
 			// 
 			this->btnAnnuler->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->btnAnnuler->Location = System::Drawing::Point(313, 3);
+			this->btnAnnuler->Location = System::Drawing::Point(232, 3);
 			this->btnAnnuler->Name = L"btnAnnuler";
-			this->btnAnnuler->Size = System::Drawing::Size(305, 94);
+			this->btnAnnuler->Size = System::Drawing::Size(224, 94);
 			this->btnAnnuler->TabIndex = 1;
 			this->btnAnnuler->Text = L"Annuler";
 			this->btnAnnuler->UseVisualStyleBackColor = true;
-			this->btnAnnuler->Click += gcnew System::EventHandler(this, &PersonnelSupprimer::btnAnnuler_Click);
+			this->btnAnnuler->Click += gcnew System::EventHandler(this, &MyFormCommandeSupprimer::btnAnnuler_Click);
 			// 
-			// PersonnelSupprimer
+			// MyFormCommandeSupprimer
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(621, 563);
+			this->ClientSize = System::Drawing::Size(459, 643);
 			this->ControlBox = false;
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->txtID);
 			this->Controls->Add(this->lbID);
 			this->Controls->Add(this->lbSupprimer);
-			this->Name = L"PersonnelSupprimer";
-			this->Text = L"PersonnelSupprimer";
-			this->Load += gcnew System::EventHandler(this, &PersonnelSupprimer::PersonnelSupprimer_Load_1);
+			this->Name = L"MyFormCommandeSupprimer";
+			this->Text = L"MyFormCommandeSupprimer";
+			this->Load += gcnew System::EventHandler(this, &MyFormCommandeSupprimer::MyFormCommandeSupprimer_Load_1);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -167,14 +167,13 @@ namespace ProjectPOO {
 		}
 		else
 		{
-			int ID = System::Convert::ToInt32(this->txtID->Text);
-			this->oSvc->SupprimerPersonnel(ID);
+			this->oSvc->SupprimerCommande(this->txtID->Text);
 		}
 
 
 	}
-private: System::Void PersonnelSupprimer_Load_1(System::Object^ sender, System::EventArgs^ e) {
-	this->oSvc = gcnew NS_Comp_Svc::CLservicesPersonnel();
-}
-};
+	private: System::Void MyFormCommandeSupprimer_Load_1(System::Object^ sender, System::EventArgs^ e) {
+		this->oSvc = gcnew NS_Comp_Svc::CLservicesCommande();
+	}
+	};
 }
